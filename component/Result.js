@@ -1,26 +1,15 @@
 import React from 'react';
 
-function Result({ onClose, results, data }) {
+function Result({ dataAnswers, data, step, onReset }) {
     return (
-        <div className="modal is-active">
-            <div className="modal-background" onClick={onClose}></div>
-            <div className="modal-card">
-                <header className="modal-card-head">
-                    <p className="modal-card-title">Your answers</p>
-                    <button className="delete" onClick={onClose}></button>
-                </header>
-                <section className="modal-card-body content">
-                    <ul>
-                        {results.map((result, i) => (
-                            <li key={i} className="mb-6">
-                                <p><strong>{result.q}</strong></p>
-                                <p className={result.a === data[i].answer ? 'has-background-success has-text-white p-2' : 'has-background-danger has-text-white p-2'}>Your answer: {result.a}</p>
-                                {result.a !== data[i].answer && <p className="has-background-link has-text-white p-2">Correct answer: {data[i].answer}</p>}
-                            </li>
-                        ))}
-                    </ul>
-                </section>
-            </div>
+        <div className="result">
+            <h3>Réponses données</h3>
+            <p>{dataAnswers.q1}</p>
+            <p>{dataAnswers.q2}</p>
+            <p>{dataAnswers.q3}</p>
+            <p>{dataAnswers.q4}</p>
+            {step === 4 &&
+                <button onClick={onReset}>Try again</button>}
         </div>
     );
 }

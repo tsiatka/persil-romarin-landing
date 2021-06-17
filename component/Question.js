@@ -1,40 +1,23 @@
-import react, { useState, useRef, useEffect } from 'react';
+import react, { useState } from 'react';
+
+import Header from './Header';
+import Footer from './Footer';
 
 function Question(props) {
 
-    const { data, onAnswerUpdate, numberOfQuestions, activeQuestion, onSetActiveQuestion, onSetStep } = props;
+    const { data, dataChange, dataAnswers, onAnswerUpdate, numberOfQuestions, activeQuestion, onSetActiveQuestion, onSetStep } = props;
 
     const [selected, setSelected] = useState('');
     const [error, setError] = useState('');
-    const radiosWrapper = useRef();
 
-    console.log(data)
-
-    useEffect(() => {
-        const findCheckedInput = radiosWrapper.current.querySelector('input:checked');
-        if (findCheckedInput) {
-            findCheckedInput.checked = false;
-        }
-    }, [data]);
-
-    const changeHandler = (e) => {
-        setSelected(e.target.value);
-        if (error) {
-            setError('');
-        }
-    }
+    // const changeHandler = (e) => {
+    //     setSelected(e.target.value);
+    //     console.log(selected)
+    // }
 
     const nextClickHandler = (e) => {
-        if (selected === '') {
-            return setError('Please select one option!');
-        }
-        onAnswerUpdate(prevState => [...prevState, { q: data.question, a: selected }]);
         setSelected('');
-        if (activeQuestion < numberOfQuestions - 1) {
-            onSetActiveQuestion(activeQuestion + 1);
-        } else {
-            onSetStep(3);
-        }
+        onSetStep(3);
     }
 
     const backClickHandler = (e) => {
@@ -46,20 +29,50 @@ function Question(props) {
     }
 
     return (
-        <div className="card_container">
-            {/* <h2>{data.data[0].question}</h2> */}
-            <div className="choices_container" ref={radiosWrapper}>
-                {data.choices.map((choice, i) => (
-                    <label className="radio has-background-light" key={i}>
-                        <input type="radio" name="answer" value={choice} onChange={changeHandler} />
-                        {choice}
-                    </label>
-                ))}
+        <section>
+            <Header />
+            <div className="container">
+                <div className="question_header">
+                    <div className="left">
+                        <button><img src="/path.svg" />Question précédente</button>
+                    </div>
+                    <h1>{data.question}</h1>
+                    <div className="right"></div>
+                </div>
+                {data.type === "input" &&
+                    <input type="text" />
+                }
+                {data.type === "block" &&
+                    <>
+                        <div className="wrapper">
+                            {
+                                data.choices.map((choice, i) => (
+                                    <>
+                                        <div className="card" key={i}>
+                                            <img src="/rec.svg" alt="" />
+                                            <h2>{choice}</h2>
+                                            <p>En reprenant une alimentation saine et équilibrée</p>
+                                        </div>
+                                    </>
+                                ))
+                            }
+                        </div>
+                        <div className="card_bottom">
+                            <button className="button_next">Suivant<img src="/next.svg" alt="" /></button>
+                        </div>
+                    </>
+                }
             </div>
-            {error && <div className="has-text-danger">{error}</div>}
-            <button onClick={nextClickHandler}>Next</button>
-            <button onClick={backClickHandler}>back</button>
-        </div>
+            {/* <div className="card_container">
+                <h2>Quel est votre prénom ?</h2>
+                <div className="choices_container">
+                    <input type="text" id="q1" onChange={dataChange} required />
+                </div>
+                <button onClick={nextClickHandler}>Next</button>
+                <button onClick={backClickHandler}>back</button>
+            </div> */}
+            <Footer />
+        </section >
     )
 }
 
