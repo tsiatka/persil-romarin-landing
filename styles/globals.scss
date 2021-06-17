@@ -1,2 +1,16 @@
-@import 'homePage';
+@font-face {
+    font-family: "Riposte";
+    src: url("/font/Riposte-Regular.otf");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Recoleta";
+    src: url("/font/Recoleta-Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+@import 'reset';
 @import 'quiz';

@@ -1,23 +1,78 @@
-import react from 'react';
+import react, { useState } from 'react';
+
+import Header from './Header';
+import Footer from './Footer';
 
 function Question(props) {
 
-    const { data } = props;
+    const { data, dataChange, dataAnswers, onAnswerUpdate, numberOfQuestions, activeQuestion, onSetActiveQuestion, onSetStep } = props;
 
-    console.log(data.data[0])
+    const [selected, setSelected] = useState('');
+    const [error, setError] = useState('');
+
+    // const changeHandler = (e) => {
+    //     setSelected(e.target.value);
+    //     console.log(selected)
+    // }
+
+    const nextClickHandler = (e) => {
+        setSelected('');
+        onSetStep(3);
+    }
+
+    const backClickHandler = (e) => {
+        if (activeQuestion < numberOfQuestions - 1) {
+            onSetActiveQuestion(activeQuestion - 1);
+        } else {
+            onSetStep(3);
+        }
+    }
 
     return (
-        <div className="card_container">
-            <h2>{data.data[0].question}</h2>
-            <div className="choices_container">
-                {data.data[0].choices.map((choice, i) => (
-                    <div className="choices" key={i}>
-                        <img src="logo.svg" alt="" />
-                        {choice}
+        <section>
+            <Header />
+            <div className="container">
+                <div className="question_header">
+                    <div className="left">
+                        <button><img src="/path.svg" />Question précédente</button>
                     </div>
-                ))}
+                    <h1>{data.question}</h1>
+                    <div className="right"></div>
+                </div>
+                {data.type === "input" &&
+                    <input type="text" />
+                }
+                {data.type === "block" &&
+                    <>
+                        <div className="wrapper">
+                            {
+                                data.choices.map((choice, i) => (
+                                    <>
+                                        <div className="card" key={i}>
+                                            <img src="/rec.svg" alt="" />
+                                            <h2>{choice}</h2>
+                                            <p>En reprenant une alimentation saine et équilibrée</p>
+                                        </div>
+                                    </>
+                                ))
+                            }
+                        </div>
+                        <div className="card_bottom">
+                            <button className="button_next">Suivant<img src="/next.svg" alt="" /></button>
+                        </div>
+                    </>
+                }
             </div>
-        </div>
+            {/* <div className="card_container">
+                <h2>Quel est votre prénom ?</h2>
+                <div className="choices_container">
+                    <input type="text" id="q1" onChange={dataChange} required />
+                </div>
+                <button onClick={nextClickHandler}>Next</button>
+                <button onClick={backClickHandler}>back</button>
+            </div> */}
+            <Footer />
+        </section >
     )
 }
 
