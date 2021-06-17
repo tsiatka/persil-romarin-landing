@@ -39,7 +39,7 @@ function Question(props) {
             {data.type === "input" &&
                 <div className="container">
                     <div className="content">
-                        <p>question {step} / {numberOfQuestions}</p>
+                        <p>question {step}/{numberOfQuestions}</p>
                         <h1>{data.question}</h1>
                         <p>{data.description}</p>
                         <div className="bottom_container">
