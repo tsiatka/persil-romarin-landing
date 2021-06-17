@@ -10,6 +10,8 @@ function Question(props) {
     const [selected, setSelected] = useState('');
     const [error, setError] = useState('');
 
+    const [step, setStep] = useState(1);
+
     // const changeHandler = (e) => {
     //     setSelected(e.target.value);
     //     console.log(selected)
@@ -17,7 +19,10 @@ function Question(props) {
 
     const nextClickHandler = (e) => {
         setSelected('');
-        onSetStep(3);
+        console.log(activeQuestion, "coucou")
+        if (activeQuestion < numberOfQuestions - 1) {
+            onSetActiveQuestion(activeQuestion + 1);
+        }
     }
 
     const backClickHandler = (e) => {
@@ -30,39 +35,40 @@ function Question(props) {
 
     return (
         <section>
-            <Header />
-            <div className="container">
-                <div className="question_header">
-                    <div className="left">
-                        <button><img src="/path.svg" />Question précédente</button>
+            <Header numberOfQuestions={numberOfQuestions} step={step} />
+            {data.type === "input" &&
+                <div className="container">
+                    <div className="content">
+                        <p>question {step} / {numberOfQuestions}</p>
+                        <h1>{data.question}</h1>
+                        <p>{data.description}</p>
+                        <div className="bottom_container">
+                            <input type="text" />
+                            <button>Suivant</button>
+                        </div>
                     </div>
-                    <h1>{data.question}</h1>
-                    <div className="right"></div>
                 </div>
-                {data.type === "input" &&
-                    <input type="text" />
-                }
-                {data.type === "block" &&
-                    <>
-                        <div className="wrapper">
-                            {
-                                data.choices.map((choice, i) => (
-                                    <>
-                                        <div className="card" key={i}>
-                                            <img src="/rec.svg" alt="" />
-                                            <h2>{choice}</h2>
-                                            <p>En reprenant une alimentation saine et équilibrée</p>
-                                        </div>
-                                    </>
-                                ))
-                            }
-                        </div>
-                        <div className="card_bottom">
-                            <button className="button_next">Suivant<img src="/next.svg" alt="" /></button>
-                        </div>
-                    </>
-                }
-            </div>
+            }
+            {data.type === "block" &&
+                <>
+                    <div className="wrapper">
+                        {
+                            data.choices.map((choice, i) => (
+                                <>
+                                    <div className="card" key={i}>
+                                        <img src="/rec.svg" alt="" />
+                                        <h2>{choice}</h2>
+                                        <p>En reprenant une alimentation saine et équilibrée</p>
+                                    </div>
+                                </>
+                            ))
+                        }
+                    </div>
+                    <div className="card_bottom">
+                        <button className="button_next" onClick={nextClickHandler}>Suivant<img src="/next.svg" alt="" /></button>
+                    </div>
+                </>
+            }
             {/* <div className="card_container">
                 <h2>Quel est votre prénom ?</h2>
                 <div className="choices_container">
@@ -71,7 +77,6 @@ function Question(props) {
                 <button onClick={nextClickHandler}>Next</button>
                 <button onClick={backClickHandler}>back</button>
             </div> */}
-            <Footer />
         </section >
     )
 }

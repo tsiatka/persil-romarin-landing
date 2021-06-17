@@ -1,6 +1,12 @@
 {
     "data": [
         {
+            "question": "Quel est votre prénom ?",
+            "type": "input",
+            "description": "Cette information nous permettra de personnaliser votre expérience.",
+            "choices": []
+        },
+        {
             "question": "Quel objectif visez-vous ?",
             "type": "block",
             "choices": [
@@ -8,11 +14,6 @@
                 "Perte de poid",
                 "prise de masse"
             ]
-        },
-        {
-            "question": "Quel est votre prénom ?",
-            "type": "input",
-            "choices": []
         }
     ]
 }

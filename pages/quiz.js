@@ -68,11 +68,11 @@ export default function Quiz() {
                 {step === 2 && <Question
                     // dataChange={changeHandler}
                     data={quizData.data[activeQuestion]}
-                // dataAnswers={dataAnswers}
-                // onAnswerUpdate={setAnswers}
-                // numberOfQuestions={quizData.data.length}
-                // activeQuestion={activeQuestion}
-                // onSetActiveQuestion={setActiveQuestion}
+                    // dataAnswers={dataAnswers}
+                    // onAnswerUpdate={setAnswers}
+                    numberOfQuestions={quizData.data.length}
+                    activeQuestion={activeQuestion}
+                    onSetActiveQuestion={setActiveQuestion}
                 // onSetStep={setStep}
                 />}
 
