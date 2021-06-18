@@ -1,3 +1,7 @@
+html {
+  font-size: calc(1em*.625); // 10px = 1rem
+  line-height: 1.30;
+}
 @font-face {
     font-family: "Riposte";
     src: url("/font/Riposte-Regular.otf");
@@ -14,3 +18,5 @@
   }
 @import 'reset';
 @import 'quiz';
+@import 'type_block';
+@import 'responsive_quiz';

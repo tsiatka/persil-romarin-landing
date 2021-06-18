@@ -2,15 +2,9 @@ import React, { useState, useEffect } from 'react'
 
 const Header = (props) => {
 
-    const { step, numberOfQuestions } = props;
+    const { progress } = props;
 
     const [backgroundStyle, setBackgroundStyle] = useState({});
-    const [progress, setProgress] = useState(0);
-
-    useEffect(() => {
-        setProgress((step * 100) / numberOfQuestions)
-    }, []);
-
 
     setTimeout(() => {
         const newStyle = {
