@@ -1,16 +1,36 @@
-import react, { useState } from 'react';
+import react, { useState, useEffect } from 'react';
 
 import Header from './Header';
 import Footer from './Footer';
 
 function Question(props) {
 
-    const { data, dataChange, dataAnswers, onAnswerUpdate, numberOfQuestions, activeQuestion, onSetActiveQuestion, onSetStep } = props;
+    const { data, dataChange, onAnswerUpdate, numberOfQuestions, activeQuestion, onSetActiveQuestion, onSetStep } = props;
 
     const [selected, setSelected] = useState('');
     const [error, setError] = useState('');
 
-    const [step, setStep] = useState(1);
+    const [stepQuestion, setStepQuestion] = useState(1);
+    const [progress, setProgress] = useState(0);
+
+    const [dataAnswers, setDataAnswers] = useState({
+        q1: "",
+        q2: "",
+        q3: "",
+        q4: "",
+        q5: ""
+    })
+
+    useEffect(() => {
+        setProgress((stepQuestion * 100) / numberOfQuestions)
+    }, [])
+
+    const changeHandler = (e) => {
+        const newData = { ...dataAnswers }
+        newData[e.target.id] = e.target.value
+        setDataAnswers(newData)
+        console.log(newData)
+    }
 
     // const changeHandler = (e) => {
     //     setSelected(e.target.value);
@@ -18,10 +38,13 @@ function Question(props) {
     // }
 
     const nextClickHandler = (e) => {
-        setSelected('');
-        console.log(activeQuestion, "coucou")
+        if (dataAnswers.q1 === "") {
+            return setError('* Ce champ est obligatoire');
+        }
         if (activeQuestion < numberOfQuestions - 1) {
             onSetActiveQuestion(activeQuestion + 1);
+            setStepQuestion(stepQuestion + 1)
+            setProgress(((stepQuestion + 1) * 100) / numberOfQuestions)
         }
     }
 
@@ -35,23 +58,44 @@ function Question(props) {
 
     return (
         <section>
-            <Header numberOfQuestions={numberOfQuestions} step={step} />
+            <Header numberOfQuestions={numberOfQuestions} stepQuestion={stepQuestion} progress={progress} />
             {data.type === "input" &&
                 <div className="container">
                     <div className="content">
-                        <p>question {step}/{numberOfQuestions}</p>
+                        <p className="step">question {stepQuestion}/{numberOfQuestions}</p>
                         <h1>{data.question}</h1>
-                        <p>{data.description}</p>
+                        <p className="description">{data.description}</p>
                         <div className="bottom_container">
-                            <input type="text" />
-                            <button>Suivant</button>
+                            <input type="text" id="q1" onChange={changeHandler} />
+                            <button onClick={nextClickHandler} value="Search">Suivant</button>
                         </div>
+                        {error && <div className="error">{error}</div>}
                     </div>
                 </div>
             }
             {data.type === "block" &&
                 <>
-                    <div className="wrapper">
+                    <div className="block_container">
+                        <div className="block_content">
+                            <p className="uppercase">question {stepQuestion}/{numberOfQuestions}</p>
+                            <h1>{data.question}</h1>
+                            <div className="block_bottom_container">
+                                {console.log(data.choices)}
+                                {
+                                    data.choices.map((choice, i) => (
+                                        <>
+                                            <div className="block_card">
+                                                <img src={choice.images} alt="" />
+                                                <p>{choice.label}</p>
+                                            </div>
+
+                                        </>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    {/* <div className="wrapper">
                         {
                             data.choices.map((choice, i) => (
                                 <>
@@ -66,17 +110,9 @@ function Question(props) {
                     </div>
                     <div className="card_bottom">
                         <button className="button_next" onClick={nextClickHandler}>Suivant<img src="/next.svg" alt="" /></button>
-                    </div>
+                    </div> */}
                 </>
             }
-            {/* <div className="card_container">
-                <h2>Quel est votre prénom ?</h2>
-                <div className="choices_container">
-                    <input type="text" id="q1" onChange={dataChange} required />
-                </div>
-                <button onClick={nextClickHandler}>Next</button>
-                <button onClick={backClickHandler}>back</button>
-            </div> */}
         </section >
     )
 }

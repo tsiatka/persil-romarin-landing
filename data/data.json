@@ -7,12 +7,21 @@
             "choices": []
         },
         {
-            "question": "Quel objectif visez-vous ?",
+            "question": "Comment vous sentez-vous ?",
             "type": "block",
             "choices": [
-                "Stabilisation du poid",
-                "Perte de poid",
-                "prise de masse"
+                {
+                    "label": "En pleine forme",
+                    "images": "/light.svg"
+                },
+                {
+                    "label": "normal",
+                    "images": "/shape.svg"
+                },
+                {
+                    "label": "Pas très en forme",
+                    "images": "/cible.svg"
+                }
             ]
         }
     ]

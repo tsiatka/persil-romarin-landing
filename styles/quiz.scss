@@ -54,14 +54,14 @@ h1 {
 
             .content {
 
-                :nth-child(1) {
+                .step {
                     font-size: 13px;
                     text-transform: uppercase;
                     font-weight: 800;
                     letter-spacing: 0.14em;
                 }
 
-                :nth-child(3) {
+                .description {
                     font-size: 18px;
                     font-weight: 300;
                 }
@@ -78,6 +78,10 @@ h1 {
                         border-radius: 2px;
                         border: none;
                         box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
+
+                        &:focus {
+                            outline: none;
+                        }
                     }
 
                     input[type=text] {
@@ -99,6 +103,12 @@ h1 {
                         cursor: pointer;
                         padding: 0 24px;
                     }
+                }
+                .error {
+                    text-align: left;
+                    margin: 24px 0px 0px 15px;
+                    color: #FA4545;
+                    position: absolute;
                 }
             }
         }

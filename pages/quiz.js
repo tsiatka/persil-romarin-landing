@@ -32,23 +32,6 @@ export default function Quiz() {
     //         });
     // }, []);
 
-
-
-    const [dataAnswers, setDataAnswers] = useState({
-        q1: "",
-        q2: "",
-        q3: "",
-        q4: "",
-        q5: ""
-    })
-
-    const changeHandler = (e) => {
-        const newData = { ...dataAnswers }
-        newData[e.target.id] = e.target.value
-        setDataAnswers(newData)
-        console.log(newData)
-    }
-
     const quizStartHandler = () => {
         setStep(2);
     }
