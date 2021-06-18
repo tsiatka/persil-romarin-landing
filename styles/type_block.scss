@@ -72,6 +72,7 @@ html {
                     margin-top: 4rem;
     
                     .block_card {
+                        position: relative;
                         width: 264px;
                         height: 159px;
                         display: flex;
@@ -81,6 +82,12 @@ html {
                         background-color: #FFFFFF;
                         box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
                         border-radius: 0.2rem;
+
+                        .check {
+                            position: absolute;
+                            top: 1.6rem;
+                            right: 2rem;
+                        }
 
                         .block_card_img {
                             height: 50px;
@@ -92,6 +99,14 @@ html {
                             padding-top: 16px;
                         }
                     }
+
+                    .inactive * {
+                        opacity: 0.6;
+                    }
+                    .inactive {
+                        box-shadow: none;
+                    }
+
                     .block_card:last-child {
                         margin-right: 0;
                     }                   
