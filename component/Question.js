@@ -12,6 +12,9 @@ function Question(props) {
 
     const [stepQuestion, setStepQuestion] = useState(1);
     const [progress, setProgress] = useState(0);
+    const [isActive, setIsActive] = useState({});
+    const [isClicked, setIsClicked] = useState(false);
+
 
     const [dataAnswers, setDataAnswers] = useState({
         q1: "",
@@ -36,6 +39,11 @@ function Question(props) {
     //     setSelected(e.target.value);
     //     console.log(selected)
     // }
+
+    function handleStyle(i) {
+        setIsActive(i)
+        setIsClicked(true)
+    }
 
     const nextClickHandler = (e) => {
         if (dataAnswers.q1 === "") {
@@ -78,11 +86,13 @@ function Question(props) {
                             <p className="uppercase">question {stepQuestion}/{numberOfQuestions}</p>
                             <h1>{data.question}</h1>
                             <div className="block_bottom_container">
-                                {console.log(data.choices)}
                                 {
                                     data.choices.map((choice, i) => (
                                         <>
-                                            <div className="block_card">
+                                            <div className={"block_card " + `${isClicked ? (i == isActive ? "active" : "inactive") : ''}`} onClick={e => handleStyle(i)} key={i}>
+                                                {isActive === i &&
+                                                    <img class="check" src="/check.svg" alt="" />
+                                                }
                                                 <div className="block_card_img">
                                                     <img src={choice.images} alt="" />
                                                 </div>
@@ -99,22 +109,6 @@ function Question(props) {
                         </div>
                     </div>
                     <button onClick={backClickHandler} className="back"><img src="/path.svg" alt="" />Question précédente</button>
-                    {/* <div className="wrapper">
-                        {
-                            data.choices.map((choice, i) => (
-                                <>
-                                    <div className="card" key={i}>
-                                        <img src="/rec.svg" alt="" />
-                                        <h2>{choice}</h2>
-                                        <p>En reprenant une alimentation saine et équilibrée</p>
-                                    </div>
-                                </>
-                            ))
-                        }
-                    </div>
-                    <div className="card_bottom">
-                        <button className="button_next" onClick={nextClickHandler}>Suivant<img src="/next.svg" alt="" /></button>
-                    </div> */}
                 </>
             }
         </section >
