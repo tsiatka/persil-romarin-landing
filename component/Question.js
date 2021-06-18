@@ -49,11 +49,9 @@ function Question(props) {
     }
 
     const backClickHandler = (e) => {
-        if (activeQuestion < numberOfQuestions - 1) {
-            onSetActiveQuestion(activeQuestion - 1);
-        } else {
-            onSetStep(3);
-        }
+        onSetActiveQuestion(activeQuestion - 1);
+        setStepQuestion(stepQuestion - 1)
+        setProgress(((stepQuestion - 1) * 100) / numberOfQuestions)
     }
 
     return (
@@ -100,7 +98,7 @@ function Question(props) {
                             </div>
                         </div>
                     </div>
-                    <button className="back"><img src="/path.svg" alt="" />Question précédente</button>
+                    <button onClick={backClickHandler} className="back"><img src="/path.svg" alt="" />Question précédente</button>
                     {/* <div className="wrapper">
                         {
                             data.choices.map((choice, i) => (
