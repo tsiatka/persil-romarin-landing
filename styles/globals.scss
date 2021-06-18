@@ -16,7 +16,12 @@ html {
     font-weight: 400;
     font-display: swap;
   }
+
+//import fichier css
 @import 'reset';
 @import 'quiz';
-@import 'type_block';
+@import 's_block';
+
+//import fichiers responsive
 @import 'responsive_quiz';
+@import 'responsive_s_block';

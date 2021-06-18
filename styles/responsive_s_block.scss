@@ -1,0 +1,40 @@
+@media only screen 
+  and (min-device-width: 0px) 
+  and (max-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .app {
+        background-color: red;
+        section {
+            .block_container {
+                margin: 0 1.4rem;
+                .block_content {
+                    .block_bottom_container {
+                        justify-content: center;
+                        .block_card {
+                            width: 100%;
+                            flex-direction: row;
+                            margin-right: 0;
+                            margin-bottom: 2.4rem;
+                            height: 9.5rem;
+                            align-items: center;
+                            justify-content: flex-start;
+
+                            p {
+                                padding-top: 0;
+                                margin-left: 1.6rem;
+                            }
+                            .block_card_img {
+                                width: 5rem;
+                                margin-left: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .back {
+                bottom: 2rem;
+            }
+        }
+    }
+}
