@@ -67,7 +67,7 @@ function Question(props) {
                         <p className="description">{data.description}</p>
                         <div className="bottom_container">
                             <input type="text" id="q1" onChange={changeHandler} />
-                            <button onClick={nextClickHandler} value="Search">Suivant</button>
+                            <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
                         </div>
                         {error && <div className="error">{error}</div>}
                     </div>
@@ -85,7 +85,9 @@ function Question(props) {
                                     data.choices.map((choice, i) => (
                                         <>
                                             <div className="block_card">
-                                                <img src={choice.images} alt="" />
+                                                <div className="block_card_img">
+                                                    <img src={choice.images} alt="" />
+                                                </div>
                                                 <p>{choice.label}</p>
                                             </div>
 
@@ -93,8 +95,12 @@ function Question(props) {
                                     ))
                                 }
                             </div>
+                            <div>
+                                <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
+                            </div>
                         </div>
                     </div>
+                    <button className="back"><img src="/path.svg" alt="" />Question précédente</button>
                     {/* <div className="wrapper">
                         {
                             data.choices.map((choice, i) => (
