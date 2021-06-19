@@ -5,7 +5,6 @@ import Question from "../component/Question";
 import quizData from '../data/data.json';
 import Start from '../component/Start';
 import Result from '../component/Result';
-import QuestionCheckBox from '../component/QuestionCheckBox';
 import Layout from '../component/Layout';
 
 

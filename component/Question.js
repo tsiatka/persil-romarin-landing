@@ -1,7 +1,10 @@
 import react, { useState, useEffect } from 'react';
 
 import Header from './Header';
-import Footer from './Footer';
+import S_input from './S_input';
+import S_block from './S_block';
+import M_block from './M_block';
+
 
 function Question(props) {
 
@@ -53,6 +56,8 @@ function Question(props) {
             onSetActiveQuestion(activeQuestion + 1);
             setStepQuestion(stepQuestion + 1)
             setProgress(((stepQuestion + 1) * 100) / numberOfQuestions)
+            setIsActive({})
+            setIsClicked(false)
         }
     }
 
@@ -62,55 +67,47 @@ function Question(props) {
         setProgress(((stepQuestion - 1) * 100) / numberOfQuestions)
     }
 
+    const replyHandler = (e) => {
+
+    }
+
     return (
         <section>
             <Header numberOfQuestions={numberOfQuestions} stepQuestion={stepQuestion} progress={progress} />
-            {data.type === "input" &&
-                <div className="container">
-                    <div className="content">
-                        <p className="step">question {stepQuestion}/{numberOfQuestions}</p>
-                        <h1>{data.question}</h1>
-                        <p className="description">{data.description}</p>
-                        <div className="bottom_container">
-                            <input type="text" id="q1" onChange={changeHandler} />
-                            <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
-                        </div>
-                        {error && <div className="error">{error}</div>}
-                    </div>
-                </div>
-            }
-            {data.type === "block" &&
-                <>
-                    <div className="block_container">
-                        <div className="block_content">
-                            <p className="uppercase">question {stepQuestion}/{numberOfQuestions}</p>
-                            <h1>{data.question}</h1>
-                            <div className="block_bottom_container">
-                                {
-                                    data.choices.map((choice, i) => (
-                                        <>
-                                            <div className={"block_card " + `${isClicked ? (i == isActive ? "active" : "inactive") : ''}`} onClick={e => handleStyle(i)} key={i}>
-                                                {isActive === i &&
-                                                    <img class="check" src="/check.svg" alt="" />
-                                                }
-                                                <div className="block_card_img">
-                                                    <img src={choice.images} alt="" />
-                                                </div>
-                                                <p>{choice.label}</p>
-                                            </div>
-
-                                        </>
-                                    ))
-                                }
-                            </div>
-                            <div>
-                                <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
-                            </div>
-                        </div>
-                    </div>
-                    <button onClick={backClickHandler} className="back"><img src="/path.svg" alt="" />Question précédente</button>
-                </>
-            }
+            {data.type === "input" && <S_input
+                data={data}
+                stepQuestion={stepQuestion}
+                numberOfQuestions={numberOfQuestions}
+                changeHandler={changeHandler}
+                error={error}
+                nextClickHandler={nextClickHandler}
+            />}
+            {data.type === "block" && <S_block
+                data={data}
+                stepQuestion={stepQuestion}
+                numberOfQuestions={numberOfQuestions}
+                changeHandler={changeHandler}
+                error={error}
+                nextClickHandler={nextClickHandler}
+                backClickHandler={backClickHandler}
+                handleStyle={handleStyle}
+                isClicked={isClicked}
+                isActive={isActive}
+                replyHandler={replyHandler}
+            />}
+            {data.type === "block4" && <M_block
+                data={data}
+                stepQuestion={stepQuestion}
+                numberOfQuestions={numberOfQuestions}
+                changeHandler={changeHandler}
+                error={error}
+                nextClickHandler={nextClickHandler}
+                backClickHandler={backClickHandler}
+                handleStyle={handleStyle}
+                isClicked={isClicked}
+                isActive={isActive}
+                replyHandler={replyHandler}
+            />}
         </section >
     )
 }
