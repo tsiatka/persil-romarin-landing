@@ -9,6 +9,7 @@
         {
             "question": "Comment vous sentez-vous ?",
             "type": "block",
+            "reply": true,
             "choices": [
                 {
                     "label": "En pleine forme",
@@ -21,6 +22,53 @@
                 {
                     "label": "Pas très en forme",
                     "images": "/cible.svg"
+                }
+            ]
+        },
+        {
+            "question": "Est-ce que vous souhaitez vous fixer un objectif ?",
+            "type": "block",
+            "choices": [
+                {
+                    "label": "Se sentir plus énergique",
+                    "images": "/light.svg",
+                    "description": "En reprenant une alimentation saine et équilibrée"
+                },
+                {
+                    "label": "Se muscler",
+                    "images": "/shape.svg",
+                    "description": "Adapter mon alimentation à mon activité physique"
+                },
+                {
+                    "label": "Atteindre un poids cible",
+                    "images": "/cible.svg",
+                    "description": "Me sentir mieux dans ma tête et dans mon corps"
+                }
+            ]
+        },
+        {
+            "question": "Quel est votre niveau d'activité physique ?",
+            "type": "block4",
+            "choices": [
+                {
+                    "label": "Peu actif",
+                    "images": "/light.svg",
+                    "description": "Je ne pratique pas d'activité"
+                },
+                {
+                    "label": "Modérément actif",
+                    "images": "/shape.svg",
+                    "description": "Environ une fois par semaine"
+                },
+                {
+                    "label": "Actif",
+                    "images": "/cible.svg",
+                    "description": "Plusieurs fois par semaine"
+                },
+                {
+                    "label": "Très actif",
+                    "images": "/cible.svg",
+                    "description": "Tous les jours"
                 }
             ]
         }

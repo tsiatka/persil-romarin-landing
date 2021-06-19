@@ -1,0 +1,76 @@
+.app {
+    section {
+        .block_container {
+            .block_content {
+                .block_4_bottom_container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    width: 60%;
+                    margin-left: auto;
+                    margin-right: auto;
+
+                    .block_4_card {
+                        background-color: #ffffff;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        width: 32rem;
+                        position: relative;
+                        box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
+                        border-radius: 0.2rem;
+                        cursor: pointer;
+
+                        .block_4_check {
+                            position: absolute;
+                            top: 1.6rem;
+                            right: 2rem;
+                        }
+
+                        &:nth-child(1) {
+                            margin: 4rem 4rem 4rem 0;
+                        }
+                        &:nth-child(2) {
+                            margin: 4rem 0;
+                        }
+                        &:nth-child(3) {
+                            margin: 0 4rem 0 0;
+                        }
+
+                        .block_4_card_img {
+                            height: 9.3rem;
+                            margin-right: auto;
+                            margin-left: auto;
+                            display: flex;
+                        }
+                        .block_4_label_container {
+                            min-width: 75%;
+                            display: flex;
+                            flex-direction: column;
+                            text-align: left;
+                            justify-content: center;
+
+                            .block_4_label {
+                                padding-bottom: 0.4rem;
+                                font-size: 18px;
+                                font-size: 400;
+                                color: #000000;
+                            }
+
+                            .block_4_description {
+                                color: #6E798C;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                    .inactive * {
+                        opacity: 0.6;
+                    }
+                    .inactive {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}
