@@ -1,6 +1,7 @@
 import react, { useState, useEffect } from 'react';
 
 import Header from './Header';
+import Input from './Input';
 import S_input from './S_input';
 import S_block from './S_block';
 
@@ -125,6 +126,15 @@ function Question(props) {
                 isClicked={isClicked}
                 isActive={isActive}
                 replyHandler={replyHandler}
+            />}
+            {data.type === "input1" && <Input
+                data={data}
+                stepQuestion={stepQuestion}
+                numberOfQuestions={numberOfQuestions}
+                changeHandler={changeHandler}
+                error={error}
+                nextClickHandler={nextClickHandler}
+                backClickHandler={backClickHandler}
             />}
         </section >
     )

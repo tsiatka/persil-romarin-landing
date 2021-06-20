@@ -80,6 +80,12 @@
                 "kg",
                 "cm"
             ]
+        },
+        {
+            "question": "Quel est votre poids cible ?",
+            "description": "Ces informations sont nécessaires afin de vous proposer des plats correspondant au mieux à votre métabolisme.",
+            "type": "input1",
+            "placeholders": "kg"
         }
     ]
 }
