@@ -44,10 +44,10 @@
                         border: none;
                         text-align: center;
                         padding: 1.8rem;
-                        background: url("/polygon.svg") no-repeat scroll 150px 25px;
                         background-color: #FFFFFF;
                         font-size: 20px;
                         line-height: 100%;
+                        box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
                     }
                     input::-webkit-outer-spin-button,
                     input::-webkit-inner-spin-button {
