@@ -18,10 +18,14 @@ html {
   }
 
 //import fichier css
+@import 'header';
+@import 'footer';
+@import 'hero';
 @import 'reset';
 @import 'quiz';
 @import 's_block';
 @import 'm_block';
+@import 'm_input';
 
 //import fichiers responsive
 @import 'responsive_quiz';

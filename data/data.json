@@ -71,6 +71,15 @@
                     "description": "Tous les jours"
                 }
             ]
+        },
+        {
+            "question": "Quel est votre poids et taille ?",
+            "description": "Ces informations sont nécessaires afin de vous proposer des plats correspondant au mieux à votre métabolisme.",
+            "type": "input2",
+            "placeholders": [
+                "kg",
+                "cm"
+            ]
         }
     ]
 }
