@@ -15,7 +15,7 @@ function Input(props) {
                         <input type="text" id="q6" placeholder={data.placeholders} onChange={changeHandler} />
                     </div>
                     {error && <div className="error">{error}</div>}
-                    <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
+                    <button onClick={nextClickHandler} value="Search" className="input_next">Suivant</button>
                 </div>
             </div>
             <button onClick={backClickHandler} className="back"><img src="/path.svg" alt="" />Question précédente</button>
