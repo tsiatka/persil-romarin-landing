@@ -1,0 +1,74 @@
+.app {
+
+    section {
+
+        .input_2_container {
+            font-weight: 300;
+            font-size: 18px;
+            color: #151515;
+            display: flex;
+            justify-content: center;
+            min-height: 100%;
+            align-items: center;
+            text-align: center;
+
+            h1 {
+                font-size: 38px;
+                font-weight: 500;
+                padding: 24px 0 16px 0;
+            }
+
+            .input_2_content {
+                width: 40%;
+
+                .step {
+                    font-size: 13px;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    letter-spacing: 0.14em;
+                }
+
+                .description {
+                    font-size: 18px;
+                    font-weight: 300;
+                    line-height: 140%;
+                }
+
+                .input_2_bottom_container {
+                    margin: 4rem 0 5.7rem 0;
+
+                    :nth-child(1) {
+                        margin-right: 3.2rem;
+                    }
+                    input {
+                        border: none;
+                        text-align: center;
+                        padding: 1.8rem;
+                        background: url("/polygon.svg") no-repeat scroll 150px 25px;
+                        background-color: #FFFFFF;
+                        font-size: 20px;
+                        line-height: 100%;
+                    }
+                    input::-webkit-outer-spin-button,
+                    input::-webkit-inner-spin-button {
+                    display: none;
+                    -webkit-appearance: none;
+                    margin: 0;
+                    }
+                }
+            }
+            .next {
+                color: #FFFFFF;
+                background-color: #151515;
+                border: none;
+                border-radius: 0.2rem;
+                box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
+                font-weight: 400;
+                font-size: 1.8rem;
+                cursor: pointer;
+                padding: 1.9rem 2.4rem;
+                margin-top: 4rem;
+            }
+        }
+    }
+}

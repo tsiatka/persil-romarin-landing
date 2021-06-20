@@ -3,7 +3,6 @@ import react, { useState, useEffect } from 'react';
 import _URL from "../component/url";
 import Question from "../component/Question";
 import quizData from '../data/data.json';
-import Start from '../component/Start';
 import Result from '../component/Result';
 import Layout from '../component/Layout';
 
@@ -46,7 +45,6 @@ export default function Quiz() {
         <>
             <Layout />
             <div className="app">
-                {step === 18 && <Start onQuizStart={quizStartHandler} />}
                 {step === 2 && <Question
                     // dataChange={changeHandler}
                     data={quizData.data[activeQuestion]}
