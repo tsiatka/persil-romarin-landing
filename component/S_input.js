@@ -15,7 +15,7 @@ function S_input(props) {
                     <h1>{data.question}</h1>
                     <p className="description">{data.description}</p>
                     <div className="bottom_container">
-                        <input type="text" id="q1" onChange={changeHandler} />
+                        <input type="text" id="r1" onChange={changeHandler} />
                         <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
                     </div>
                     {error && <div className="error">{error}</div>}

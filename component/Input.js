@@ -7,12 +7,12 @@ function Input(props) {
     return (
         <>
             <div className="container">
-                <div className="content">
+                <div className="input_content">
                     <p className="step">question {stepQuestion}/{numberOfQuestions}</p>
                     <h1>{data.question}</h1>
                     <p className="description">{data.description}</p>
                     <div className="input_bottom_container">
-                        <input type="text" id="q6" placeholder={data.placeholders} onChange={changeHandler} />
+                        <input type="text" id="r7" placeholder={data.placeholders} onChange={changeHandler} />
                     </div>
                     {error && <div className="error">{error}</div>}
                     <button onClick={nextClickHandler} value="Search" className="input_next">Suivant</button>

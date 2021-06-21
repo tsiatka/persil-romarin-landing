@@ -4,7 +4,7 @@ import React from 'react'
 
 function S_block(props) {
 
-    const { data, stepQuestion, numberOfQuestions, replyHandler, error, nextClickHandler, backClickHandler, handleStyle, isClicked, isActive } = props;
+    const { data, stepQuestion, numberOfQuestions, replyHandler, error, nextClickHandler, backClickHandler, handleStyle, isClicked, isActive, changeHandler } = props;
 
     return (
         <>
@@ -16,7 +16,6 @@ function S_block(props) {
                         {
                             data.choices.map((choice, i) => (
                                 <>
-                                    {console.log(isActive)}
                                     <div id="q2" value={choice.label} className={"block_card " + `${isClicked ? (i == isActive ? "active" : "inactive") : ''}`} onClick={e => handleStyle(i)} key={i}>
                                         {isActive === i &&
                                             <img class="check" src="/check.svg" alt="" />
@@ -36,11 +35,6 @@ function S_block(props) {
                     <div>
                         <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
                     </div>
-                    {data.reply === false &&
-                        <div>
-                            <button onClick={replyHandler} value="Search" className="next">Suivant</button>
-                        </div>
-                    }
                 </div>
             </div>
             <button onClick={backClickHandler} className="back"><img src="/path.svg" alt="" />Question précédente</button>

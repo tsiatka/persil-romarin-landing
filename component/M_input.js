@@ -2,7 +2,7 @@ import React from 'react'
 
 const M_input = (props) => {
 
-    const { data, stepQuestion, numberOfQuestions, changeHandler, errorInput, nextClickHandler, backClickHandler } = props;
+    const { data, stepQuestion, numberOfQuestions, changeHandler, error, nextClickHandler, backClickHandler } = props;
 
     return (
         <>
@@ -17,8 +17,8 @@ const M_input = (props) => {
                         ))
                         }
                     </div>
+                    {error && <div className="error">{error}</div>}
                     <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
-                    {errorInput && <div className="error">{error}</div>}
                 </div>
             </div>
             <button onClick={backClickHandler} className="back"><img src="/path.svg" alt="" />Question précédente</button>

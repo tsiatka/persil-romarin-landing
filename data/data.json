@@ -8,7 +8,7 @@
         },
         {
             "question": "Comment vous sentez-vous ?",
-            "type": "block",
+            "type": "block_reply",
             "reply": true,
             "choices": [
                 {
@@ -86,6 +86,90 @@
             "description": "Ces informations sont nécessaires afin de vous proposer des plats correspondant au mieux à votre métabolisme.",
             "type": "input1",
             "placeholders": "kg"
+        },
+        {
+            "question": "Quel est votre sexe ?",
+            "question_annex": "Quel est le sexe qui vous a été attribué à la naissance ?",
+            "description_annex": "Ces informations sont nécessaires afin de vous proposer des plats correspondant au mieux à votre métabolisme.",
+            "type": "block_annex",
+            "choices": [
+                {
+                    "label": "Masculin",
+                    "images": "/light.svg"
+                },
+                {
+                    "label": "Féminin",
+                    "images": "/shape.svg"
+                },
+                {
+                    "label": "Autre",
+                    "images": "/cible.svg"
+                }
+            ],
+            "choices_annex": [
+                {
+                    "label": "Masculin",
+                    "images": "/light.svg"
+                },
+                {
+                    "label": "Féminin",
+                    "images": "/shape.svg"
+                }
+            ]
+        },
+        {
+            "question": "Avez-vous des allergies ou intolérances connues ?",
+            "type": "block16",
+            "choices": [
+                {
+                    "label": "Aucun",
+                    "images": "/light.svg"
+                },
+                {
+                    "label": "actif",
+                    "images": "/shape.svg"
+                },
+                {
+                    "label": "Actif",
+                    "images": "/cible.svg"
+                },
+                {
+                    "label": "actif",
+                    "images": "/cible.svg"
+                },
+                {
+                    "label": "actif",
+                    "images": "/cible.svg"
+                },
+                {
+                    "label": "actif",
+                    "images": "/cible.svg"
+                },
+                {
+                    "label": "actif",
+                    "images": "/cible.svg"
+                },
+                {
+                    "label": "actif",
+                    "images": "/cible.svg"
+                },
+                {
+                    "label": "actif",
+                    "images": "/cible.svg"
+                },
+                {
+                    "label": "actif",
+                    "images": "/cible.svg"
+                },
+                {
+                    "label": "actif",
+                    "images": "/cible.svg"
+                },
+                {
+                    "label": "actif",
+                    "images": "/cible.svg"
+                }
+            ]
         }
     ]
 }
