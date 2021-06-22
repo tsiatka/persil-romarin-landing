@@ -11,7 +11,7 @@ export default function Quiz() {
 
     const [step, setStep] = useState(2);
     const [question, setQuestion] = useState({});
-    const [activeQuestion, setActiveQuestion] = useState(0);
+    const [activeQuestion, setActiveQuestion] = useState(1);
 
 
     var headers = new Headers();
@@ -47,16 +47,18 @@ export default function Quiz() {
             <div className="app">
                 {step === 2 && <Question
                     // dataChange={changeHandler}
-                    data={quizData.data[activeQuestion]}
+                    data={quizData.data.filter(data => data.id === activeQuestion)[0]}
+                    datas={quizData.data}
                     // dataAnswers={dataAnswers}
                     // onAnswerUpdate={setAnswers}
-                    numberOfQuestions={quizData.data.length}
+                    numberOfQuestions={quizData.data.filter(data => data.progress === true).length}
                     activeQuestion={activeQuestion}
                     onSetActiveQuestion={setActiveQuestion}
                 // onSetStep={setStep}
                 />}
 
                 {step === 3 && <QuestionCheckBox
+                    datas={quizData.data}
                     data={quizData.data[activeQuestion]}
                     dataChange={changeHandler}
                     onAnswerUpdate={setAnswers}

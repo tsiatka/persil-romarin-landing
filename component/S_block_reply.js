@@ -2,9 +2,9 @@
 
 import React from 'react'
 
-function S_block(props) {
+function S_block_reply(props) {
 
-    const { data, stepQuestion, numberOfQuestions, replyHandler, error, nextClickHandler, backClickHandler, handleStyle, isClicked, isActive, changeHandler } = props;
+    const { data, stepQuestion, numberOfQuestions, replyHandler, error, nextClickHandler, backClickHandler, handleStyle, isClicked, isActive, changeHandler, inputAnswer, dataAnswers } = props;
 
     return (
         <>
@@ -16,7 +16,7 @@ function S_block(props) {
                         {
                             data.choices.map((choice, i) => (
                                 <>
-                                    <div id={data.dataName} value={choice.label} className={"block_card " + `${isClicked ? (i == isActive ? "active" : "inactive") : ''}`} onClick={e => handleStyle(e, i)} key={i}>
+                                    <div id="q2" value={choice.label} className={"block_card " + `${isClicked ? (i == isActive ? "active" : "inactive") : ''}`} onClick={e => handleStyle(e, i)} key={i}>
                                         {isActive === i &&
                                             <img class="check" src="/check.svg" alt="" />
                                         }
@@ -33,17 +33,33 @@ function S_block(props) {
                         }
                     </div>
                     <div>
-                        {stepQuestion === numberOfQuestions ?
-                            <button onClick={nextClickHandler} className="next" href="">Finaliser</button>
-                            :
-                            <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
-                        }
+                        <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
                     </div>
                 </div>
             </div>
             <button onClick={backClickHandler} className="back"><img src="/path.svg" alt="" />Question précédente</button>
+
+
+            {/* {inputAnswer === 1 &&
+                <>
+                    <div className="block_container">
+                        <div className="block_content">
+                            <h1>{dataAnswers.r1}</h1>
+                            <p>Nous sommes heureux de savoir que tout roule pour vous !</p>
+                        </div>
+                    </div>
+                </>
+            }
+            {inputAnswer === 2 &&
+                <div className="block_container">
+                    <div className="block_content">
+                        <h1>Bonjour {dataAnswers.r1}</h1>
+                        <p>Nous sommes heureux de savoir que tout roule pour vous !</p>
+                    </div>
+                </div>
+            } */}
         </>
     )
 }
 
-export default S_block;
+export default S_block_reply;

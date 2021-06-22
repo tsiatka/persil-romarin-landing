@@ -1,0 +1,89 @@
+.app {
+    section {
+        .container {
+            .email_content {
+                width: 55%;
+
+                .email_bottom_container {
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    display: flex;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 4rem;
+
+                    input[type='email']{
+                        width: 47rem;
+                        padding: 18px 24px 18px 24px;
+                        border-radius: 2px;
+                        border: none;
+                        box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
+                        font-size: 20px;
+                        line-height: 2rem;
+                        color: #151515;
+        
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    .checkbox_content {
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: row;
+                        margin-top: 2.4rem;
+                        margin-bottom: 4rem;
+
+                        input[type=checkbox] {
+                            position: relative;
+                              cursor: pointer;
+                              margin-right: 1rem;
+                        }
+                        input[type=checkbox]:before {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 25px;
+                            height: 25px;
+                            top: -5px;
+                            left: -10px;
+                            border: none;
+                            border-radius: 3px;
+                            background-color: white;
+                        }
+                        input[type=checkbox]:checked:after {
+                            content: "";
+                            display: block;
+                            width: 5px;
+                            height: 10px;
+                            border: solid black;
+                            border-width: 0 2px 2px 0;
+                            -webkit-transform: rotate(45deg);
+                            -ms-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                        }
+                    }
+                }
+                .input_next {
+                    color: #FFFFFF;
+                    background-color: #151515;
+                    border: none;
+                    border-radius: 0.2rem;
+                    box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
+                    font-weight: 400;
+                    font-size: 1.8rem;
+                    cursor: pointer;
+                    padding: 1.9rem 2.4rem;
+                }
+                .error_email {
+                    color: #FA4545;
+                    font-size: 16px;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}
