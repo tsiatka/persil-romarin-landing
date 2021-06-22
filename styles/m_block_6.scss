@@ -2,37 +2,19 @@
     section {
         .block_container {
             .block_content {
-
-                .title_block_16 {
-                    font-size: 3.8rem;
-                    font-weight: 500;
-                    padding: 2.4rem 0 4rem 0;
-                }
-
-                .next_block_16 {
-                    color: #FFFFFF;
-                    background-color: #151515;
-                    border: none;
-                    border-radius: 0.2rem;
-                    box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
-                    font-weight: 400;
-                    font-size: 1.8rem;
-                    cursor: pointer;
-                    padding: 1.9rem 2.4rem;
-                }
-                .block_16_bottom_container {
+                .block_6_bottom_container {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
-                    width: 80%;
+                    width: 50%;
                     margin-left: auto;
                     margin-right: auto;
 
-                    .block_16_card {
+                    .block_6_card {
                         background-color: #ffffff;
                         display: flex;
                         flex-direction: row;
-                        width: 21rem;
+                        width: 31rem;
                         height: 6.4rem;
                         position: relative;
                         box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
@@ -43,39 +25,30 @@
                             pointer-events: none;
                         }
 
+                        &:nth-child(1) {
+                            margin-right: 4rem;
+                        }
+                        &:nth-child(3) {
+                            margin-right: 4rem;
+                        }
+                        &:nth-child(5) {
+                            margin-right: 4rem;
+                        }
+
+                        &:nth-child(-n+4) {
+                            margin-bottom: 4rem;
+                        }
+
                         .block_16_check {
                             position: absolute;
                             top: 1rem;
                             right: 1rem;
                         }
 
-                        &:nth-child(-n+8) {
-                            margin-bottom: 4rem;
-                        }
-
-                        &:nth-child(-n+3) {
-                            margin-right: 4rem;
-                        }
-                        &:nth-child(5) {
-                            margin-right: 4rem;
-                        }
-                        &:nth-child(6) {
-                            margin-right: 4rem;
-                        }
-                        &:nth-child(7) {
-                            margin-right: 4rem;
-                        }
-                        &:nth-child(n+9) {
-                            margin-right: 4rem;
-                        }
-                        &:nth-child(12) {
-                            margin-right: 0rem!important;
-                        }
-
-                        .block_16_card_img {
+                        .block_6_card_img {
                             height: 6.4rem;
-                            margin-right: 1.2rem;
-                            margin-left: 1.6rem;
+                            margin-right: 1.6rem;
+                            margin-left: 2.4rem;
                             display: flex;
                         }
                         .block_16_label_container {

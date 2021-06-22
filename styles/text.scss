@@ -1,0 +1,29 @@
+.app {
+    section {
+        .container {
+            .content_text {
+                width: 50%;
+                
+                .description {
+                    margin-bottom: 5.7rem;
+                }
+
+
+                .bottom_container_text {
+
+                    .next {
+                        color: #FFFFFF;
+                        background-color: #151515;
+                        border: none;
+                        border-radius: 0.2rem;
+                        box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
+                        font-weight: 400;
+                        font-size: 1.8rem;
+                        cursor: pointer;
+                        padding: 1.9rem 2.4rem;
+                    }
+                }
+            }
+        }
+    }
+}

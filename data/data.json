@@ -1,173 +1,416 @@
 {
     "data": [
         {
+            "id": 1,
+            "dataName": "prenom",
+            "progress": true,
             "question": "Quel est votre prénom ?",
             "type": "input",
             "description": "Cette information nous permettra de personnaliser votre expérience.",
-            "choices": []
+            "requis": true,
+            "choices": [
+                {
+                    "nextStep": 2
+                }
+            ]
         },
         {
+            "id": 2,
+            "dataName": "feeling",
+            "progress": true,
             "question": "Comment vous sentez-vous ?",
-            "type": "block_reply",
-            "reply": true,
+            "type": "block",
+            "requis": true,
             "choices": [
                 {
                     "label": "En pleine forme",
-                    "images": "/light.svg"
+                    "images": "/light.svg",
+                    "nextStep": 3
                 },
                 {
                     "label": "Normal",
-                    "images": "/shape.svg"
+                    "images": "/shape.svg",
+                    "nextStep": 3
                 },
                 {
                     "label": "Pas très en forme",
-                    "images": "/cible.svg"
+                    "images": "/cible.svg",
+                    "nextStep": 4
                 }
             ]
         },
         {
-            "question": "Est-ce que vous souhaitez vous fixer un objectif ?",
-            "type": "block",
+            "id": 3,
+            "dataName": "",
+            "progress": false,
+            "question": "Bonjour",
+            "description": "Nous sommes heureux de savoir que tout roule pour vous !",
+            "type": "text",
+            "requis": false,
             "choices": [
                 {
-                    "label": "Se sentir plus énergique",
-                    "images": "/light.svg",
-                    "description": "En reprenant une alimentation saine et équilibrée"
-                },
-                {
-                    "label": "Se muscler",
-                    "images": "/shape.svg",
-                    "description": "Adapter mon alimentation à mon activité physique"
-                },
-                {
-                    "label": "Atteindre un poids cible",
-                    "images": "/cible.svg",
-                    "description": "Me sentir mieux dans ma tête et dans mon corps"
+                    "nextStep": 6
                 }
             ]
         },
         {
-            "question": "Quel est votre niveau d'activité physique ?",
+            "id": 4,
+            "dataName": "",
+            "progress": false,
+            "question": "Bonjour",
+            "description": "On est triste de l'apprendre... Sachez que l'alimentation peut avoir un impact sur votre quotidien.",
+            "type": "text",
+            "requis": false,
+            "choices": [
+                {
+                    "nextStep": 5
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "dataName": "activite",
+            "progress": false,
+            "question": "Est-ce que vous pouvez nous en dire plus ?",
+            "description": "Une alimentation adaptée peut vous permettre de retrouver votre bien-être au quotidien. En déterminant ce qu’il ne va pas, nous pourrons vous suggérer des plats adaptés.",
             "type": "block4",
+            "requis": true,
             "choices": [
                 {
                     "label": "Peu actif",
                     "images": "/light.svg",
-                    "description": "Je ne pratique pas d'activité"
+                    "description": "Je ne pratique pas d'activité",
+                    "nextStep": 6
                 },
                 {
                     "label": "Modérément actif",
                     "images": "/shape.svg",
-                    "description": "Environ une fois par semaine"
+                    "description": "Environ une fois par semaine",
+                    "nextStep": 6
                 },
                 {
                     "label": "Actif",
                     "images": "/cible.svg",
-                    "description": "Plusieurs fois par semaine"
+                    "description": "Plusieurs fois par semaine",
+                    "nextStep": 6
                 },
                 {
                     "label": "Très actif",
                     "images": "/cible.svg",
-                    "description": "Tous les jours"
+                    "description": "Tous les jours",
+                    "nextStep": 6
                 }
             ]
         },
         {
-            "question": "Quel est votre poids et taille ?",
-            "description": "Ces informations sont nécessaires afin de vous proposer des plats correspondant au mieux à votre métabolisme.",
-            "type": "input2",
-            "placeholders": [
-                "kg",
-                "cm"
-            ]
-        },
-        {
-            "question": "Quel est votre poids cible ?",
-            "description": "Ces informations sont nécessaires afin de vous proposer des plats correspondant au mieux à votre métabolisme.",
-            "type": "input1",
-            "placeholders": "kg"
-        },
-        {
-            "question": "Quel est votre sexe ?",
-            "question_annex": "Quel est le sexe qui vous a été attribué à la naissance ?",
-            "description_annex": "Ces informations sont nécessaires afin de vous proposer des plats correspondant au mieux à votre métabolisme.",
-            "type": "block_annex",
+            "id": 6,
+            "dataName": "objectif",
+            "progress": true,
+            "question": "Est-ce que vous souhaitez vous fixer un objectif ?",
+            "type": "block",
+            "requis": true,
             "choices": [
                 {
-                    "label": "Masculin",
-                    "images": "/light.svg"
+                    "label": "Se sentir plus énergique",
+                    "images": "/light.svg",
+                    "description": "En reprenant une alimentation saine et équilibrée",
+                    "nextStep": 7
                 },
                 {
-                    "label": "Féminin",
-                    "images": "/shape.svg"
+                    "label": "Se muscler",
+                    "images": "/shape.svg",
+                    "description": "Adapter mon alimentation à mon activité physique",
+                    "nextStep": 7
                 },
                 {
-                    "label": "Autre",
-                    "images": "/cible.svg"
-                }
-            ],
-            "choices_annex": [
-                {
-                    "label": "Masculin",
-                    "images": "/light.svg"
-                },
-                {
-                    "label": "Féminin",
-                    "images": "/shape.svg"
+                    "label": "Atteindre un poids cible",
+                    "images": "/cible.svg",
+                    "description": "Me sentir mieux dans ma tête et dans mon corps",
+                    "nextStep": 7
                 }
             ]
         },
         {
-            "question": "Avez-vous des allergies ou intolérances connues ?",
-            "type": "block16",
+            "id": 7,
+            "dataName": "level",
+            "progress": true,
+            "question": "Quel est votre niveau d'activité physique ?",
+            "type": "block4",
+            "requis": true,
             "choices": [
                 {
-                    "label": "Aucun",
-                    "images": "/light.svg"
+                    "label": "Peu actif",
+                    "images": "/light.svg",
+                    "description": "Je ne pratique pas d'activité",
+                    "nextStep": 8
                 },
                 {
-                    "label": "actif",
-                    "images": "/shape.svg"
+                    "label": "Modérément actif",
+                    "images": "/shape.svg",
+                    "description": "Environ une fois par semaine",
+                    "nextStep": 8
                 },
                 {
                     "label": "Actif",
-                    "images": "/cible.svg"
+                    "images": "/cible.svg",
+                    "description": "Plusieurs fois par semaine",
+                    "nextStep": 8
+                },
+                {
+                    "label": "Très actif",
+                    "images": "/cible.svg",
+                    "description": "Tous les jours",
+                    "nextStep": 8
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "dataName": "taillePoids",
+            "progress": true,
+            "question": "Quel est votre poids et taille ?",
+            "description": "Ces informations sont nécessaires afin de vous proposer des plats correspondant au mieux à votre métabolisme.",
+            "type": "input2",
+            "requis": true,
+            "placeholders": [
+                "kg",
+                "cm"
+            ],
+            "choices": [
+                {
+                    "nextStep": 9
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "dataName": "poidsCible",
+            "progress": true,
+            "question": "Quel est votre poids cible ?",
+            "description": "Ces informations sont nécessaires afin de vous proposer des plats correspondant au mieux à votre métabolisme.",
+            "type": "input1",
+            "placeholders": "kg",
+            "requis": true,
+            "choices": [
+                {
+                    "nextStep": 10
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "dataName": "sexe",
+            "progress": true,
+            "question": "Quel est votre sexe ?",
+            "type": "block",
+            "requis": true,
+            "choices": [
+                {
+                    "label": "Masculin",
+                    "images": "/light.svg",
+                    "nextStep": 12
+                },
+                {
+                    "label": "Féminin",
+                    "images": "/shape.svg",
+                    "nextStep": 12
+                },
+                {
+                    "label": "Autre",
+                    "images": "/cible.svg",
+                    "nextStep": 11
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "dataName": "birthsexe",
+            "progress": false,
+            "question": "Quel est le sexe qui vous a été attribué à la naissance ?",
+            "description": "Ces informations sont nécessaires afin de vous proposer des plats correspondant au mieux à votre métabolisme.",
+            "type": "block",
+            "requis": true,
+            "choices": [
+                {
+                    "label": "Masculin",
+                    "images": "/light.svg",
+                    "nextStep": 12
+                },
+                {
+                    "label": "Féminin",
+                    "images": "/shape.svg",
+                    "nextStep": 12
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "dataName": "allergies",
+            "progress": true,
+            "question": "Avez-vous des allergies ou intolérances connues ?",
+            "type": "block16",
+            "requis": true,
+            "choices": [
+                {
+                    "label": "Aucun",
+                    "images": "/light.svg",
+                    "nextStep": 13
                 },
                 {
                     "label": "actif",
-                    "images": "/cible.svg"
+                    "images": "/shape.svg",
+                    "nextStep": 13
+                },
+                {
+                    "label": "Actif",
+                    "images": "/cible.svg",
+                    "nextStep": 13
                 },
                 {
                     "label": "actif",
-                    "images": "/cible.svg"
+                    "images": "/cible.svg",
+                    "nextStep": 13
                 },
                 {
                     "label": "actif",
-                    "images": "/cible.svg"
+                    "images": "/cible.svg",
+                    "nextStep": 13
                 },
                 {
                     "label": "actif",
-                    "images": "/cible.svg"
+                    "images": "/cible.svg",
+                    "nextStep": 13
                 },
                 {
                     "label": "actif",
-                    "images": "/cible.svg"
+                    "images": "/cible.svg",
+                    "nextStep": 13
                 },
                 {
                     "label": "actif",
-                    "images": "/cible.svg"
+                    "images": "/cible.svg",
+                    "nextStep": 13
                 },
                 {
                     "label": "actif",
-                    "images": "/cible.svg"
+                    "images": "/cible.svg",
+                    "nextStep": 13
                 },
                 {
                     "label": "actif",
-                    "images": "/cible.svg"
+                    "images": "/cible.svg",
+                    "nextStep": 13
                 },
                 {
                     "label": "actif",
-                    "images": "/cible.svg"
+                    "images": "/cible.svg",
+                    "nextStep": 13
+                },
+                {
+                    "label": "actif",
+                    "images": "/cible.svg",
+                    "nextStep": 13
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "dataName": "pref",
+            "progress": true,
+            "question": "Avez-vous des préférences alimentaires ?",
+            "type": "block6",
+            "requis": false,
+            "choices": [
+                {
+                    "label": "Végétarien",
+                    "images": "/vegetarien.svg",
+                    "nextStep": 14
+                },
+                {
+                    "label": "Végétalien",
+                    "images": "/vegetalien.svg",
+                    "nextStep": 14
+                },
+                {
+                    "label": "végan",
+                    "images": "/porc.svg",
+                    "nextStep": 14
+                },
+                {
+                    "label": "Plats sans porc",
+                    "images": "/vegan.svg",
+                    "nextStep": 14
+                },
+                {
+                    "label": "Plats sans alcool",
+                    "images": "/alcool.svg",
+                    "nextStep": 14
+                },
+                {
+                    "label": "Plat sans féculents",
+                    "images": "/feculent.svg",
+                    "nextStep": 14
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "dataName": "sante",
+            "progress": true,
+            "question": "Avez-vous des problèmatiques de santé pouvant affecter votre alimentation ?",
+            "type": "input1",
+            "requis": false,
+            "choices": [
+                {
+                    "nextStep": 15
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "dataName": "birthDate",
+            "progress": true,
+            "question": "Quel est votre date de naissance ?",
+            "description": "Ces informations sont nécessaires afin de personnaliser votre expérience ainsi que de vous proposer des plats correspondant au mieux à votre métabolisme.",
+            "type": "date",
+            "placeholders": [
+                "01",
+                "01",
+                "2000"
+            ],
+            "requis": true,
+            "choices": [
+                {
+                    "nextStep": 16
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "dataName": "test",
+            "progress": true,
+            "question": "Comment avez-vous découvert ce test ?",
+            "description": "",
+            "type": "select",
+            "requis": false,
+            "choices": [
+                {
+                    "nextStep": 17
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "dataName": "email",
+            "progress": true,
+            "question": "-10% sur votre première commande",
+            "description": "Nous utiliserons cette information afin de vous envoyer un code promo de -10% sur votre première commande. De plus, vous obtiendrez une copie de vos recommandations par e-mail.",
+            "type": "email",
+            "requis": true,
+            "placeholders": "Votre adresse e-mail",
+            "choices": [
+                {
+                    "nextStep": 18
                 }
             ]
         }

@@ -14,7 +14,7 @@ const M_block = (props) => {
                         {
                             data.choices.map((choice, i) => (
                                 <>
-                                    <div id="q2" value={choice.label} className={"block_4_card " + `${isClicked ? (i == isActive ? "active" : "inactive") : ''}`} onClick={e => handleStyle(i)} key={i}>
+                                    <div id={data.dataName} value={choice.label} className={"block_4_card " + `${isClicked ? (i == isActive ? "active" : "inactive") : ''}`} onClick={e => handleStyle(e, i)} key={i}>
                                         {isActive === i &&
                                             <img class="block_4_check" src="/check.svg" alt="" />
                                         }
@@ -34,13 +34,12 @@ const M_block = (props) => {
                         }
                     </div>
                     <div>
-                        <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
+                        {stepQuestion === numberOfQuestions ?
+                            <button onClick={nextClickHandler} className="next" href="">Finaliser</button>
+                            :
+                            <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
+                        }
                     </div>
-                    {data.reply === false &&
-                        <div>
-                            <button onClick={replyHandler} value="Search" className="next">Suivant</button>
-                        </div>
-                    }
                 </div>
             </div>
             <button onClick={backClickHandler} className="back"><img src="/path.svg" alt="" />Question précédente</button>

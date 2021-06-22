@@ -28,6 +28,11 @@ html {
 @import 'm_block';
 @import 'm_input';
 @import 'l_block_16';
+@import 'email';
+@import 'text';
+@import 'm_block_6';
+@import 'select_list';
+@import 'birth_date';
 
 //import fichiers responsive
 @import 'responsive_quiz';

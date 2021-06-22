@@ -16,7 +16,7 @@ function S_block(props) {
                         {
                             data.choices.map((choice, i) => (
                                 <>
-                                    <div id="q2" value={choice.label} className={"block_card " + `${isClicked ? (i == isActive ? "active" : "inactive") : ''}`} onClick={e => handleStyle(i)} key={i}>
+                                    <div id={data.dataName} value={choice.label} className={"block_card " + `${isClicked ? (i == isActive ? "active" : "inactive") : ''}`} onClick={e => handleStyle(e, i)} key={i}>
                                         {isActive === i &&
                                             <img class="check" src="/check.svg" alt="" />
                                         }
@@ -33,7 +33,11 @@ function S_block(props) {
                         }
                     </div>
                     <div>
-                        <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
+                        {stepQuestion === numberOfQuestions ?
+                            <button onClick={nextClickHandler} className="next" href="">Finaliser</button>
+                            :
+                            <button onClick={nextClickHandler} value="Search" className="next">Suivant</button>
+                        }
                     </div>
                 </div>
             </div>

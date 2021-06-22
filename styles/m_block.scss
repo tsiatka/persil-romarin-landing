@@ -21,6 +21,10 @@
                         border-radius: 0.2rem;
                         cursor: pointer;
 
+                        * {
+                            pointer-events: none;
+                        }
+
                         .block_4_check {
                             position: absolute;
                             top: 1.6rem;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function L_block_16(props) {
+function M_block_6(props) {
 
     const { data, stepQuestion, numberOfQuestions, replyHandler, error, nextClickHandler, backClickHandler, handleStyle, isClicked, changeHandler } = props;
 
@@ -17,10 +17,12 @@ function L_block_16(props) {
         setCheckedState(updateCheckedState);
     };
 
-    const handleClick = (e, i, checkedState) => {
+    const handleClick = (e, i) => {
         handleMultipleBlock(i)
         changeHandler(e, i)
     }
+
+
 
     return (
         <>
@@ -28,15 +30,15 @@ function L_block_16(props) {
                 <div className="block_content">
                     <p className="uppercase">question {stepQuestion}/{numberOfQuestions}</p>
                     <h1 className="title_block_16">{data.question}</h1>
-                    <div className="block_16_bottom_container">
+                    <div className="block_6_bottom_container">
                         {
                             data.choices.map((choice, i) => (
                                 <>
-                                    <div id={data.dataName} value={choice.label} checked={checkedState[i]} className={"block_16_card " + `${checkedState.find((item) => item === true) ? "inactive" : ""}` + `${checkedState[i] ? "active" : ""}`} onClick={e => handleClick(e, i)} key={i}>
+                                    <div id={data.dataName} value={choice.label} checked={checkedState[i]} className={"block_6_card " + `${checkedState.find((item) => item === true) ? "inactive" : ""}` + `${checkedState[i] ? "active" : ""}`} onClick={e => handleClick(e, i)} key={i}>
                                         {checkedState[i] &&
                                             <img class="block_16_check" src="/check.svg" alt="" />
                                         }
-                                        <div className="block_16_card_img">
+                                        <div className="block_6_card_img">
                                             <img src={choice.images} alt="" />
                                         </div>
                                         <div className="block_16_label_container">
@@ -51,7 +53,6 @@ function L_block_16(props) {
                             ))
                         }
                     </div>
-                    {error && <div className="error">{error}</div>}
                     <div>
                         {stepQuestion === numberOfQuestions ?
                             <button onClick={nextClickHandler} className="next" href="">Finaliser</button>
@@ -66,4 +67,4 @@ function L_block_16(props) {
     )
 }
 
-export default L_block_16;
+export default M_block_6;
