@@ -22,7 +22,7 @@ export default function Quiz({ questions }) {
                         <Question
                             data={questions?.filter(item => item.ordre === activeQuestion)[0]}
                             datas={questions}
-                            numberOfQuestions={questions.filter(data => data.progress === true).length}
+                            numberOfQuestions={questions?.filter(data => data.progress === true).length}
                             activeQuestion={activeQuestion}
                             onSetActiveQuestion={setActiveQuestion}
                         />

@@ -1,8 +1,9 @@
 import React from 'react'
+import Link from 'next/link'
 
 function Email(props) {
 
-    const { data, stepQuestion, numberOfQuestions, changeHandler, error, nextClickHandler, backClickHandler, postAPI } = props;
+    const { data, stepQuestion, numberOfQuestions, changeHandler, error, nextClickHandler, backClickHandler, postAPI, dataAnswers } = props;
 
     return (
         <>
@@ -26,7 +27,14 @@ function Email(props) {
                     </div>
                     {error && <div className="error_email">{error}</div>}
                     {stepQuestion === numberOfQuestions ?
-                        <button onClick={postAPI} className="input_next" href="">Finaliser</button>
+                        <Link
+                            href={{
+                                pathname: '/result',
+                                query: { email: `${dataAnswers.email}` },
+                            }}
+                        >
+                            <button onClick={postAPI} className="input_next">Finaliser</button>
+                        </Link>
                         :
                         <button onClick={nextClickHandler} value="Search" className="input_next">Suivant</button>
                     }

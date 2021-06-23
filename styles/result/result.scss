@@ -2,6 +2,10 @@ body {
     font-family: 'Riposte', sans-serif;
 }
 
+h2 {
+    font-family: "Recoleta", sans-serif;
+}
+
 .result_hero {
     background: url('/result.svg');
     background-repeat: no-repeat;
@@ -59,11 +63,169 @@ body {
 .planning_container {
     height: 65.4rem;
     width: 100%;
-    background-color: red;
+    display: flex;
 
     .result_content {
         width: 35%;
         height: 100%;
-        background-color: blue;
+        background-color: #FFF5EB;
+
+        
+        .answers_container {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+
+            .answers {
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 16px;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                margin-bottom: 0.8rem;
+                color: #000000;
+            }
+            .answers_title {
+                font-weight: 500;
+                font-size: 38px;
+                line-height: 110%;
+                margin-bottom: 0.8rem;
+            }
+            .answer {
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 140%;
+                margin-bottom: 0.8rem;
+            }
+            .text_container {
+                display: flex;
+                align-items: center;
+                align-items: baseline;
+
+                :nth-child(1) {
+                    font-weight: 300;
+                    font-size: 18px;
+                    line-height: 140%;
+                }
+
+                :nth-child(2) {
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 140%;
+                    margin-left: 0.4rem;
+                }
+            }
+        }
+    }
+
+    .planning {
+        width: 65%;
+        height: 100%;
+
+        .planning_head {
+            height: 12%;
+            background-color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-right: 3.2rem;
+                font-size: 18px;
+                line-height: 22px;
+                cursor: pointer;
+            }
+            :last-child {
+                margin-right: 0!important;
+            }
+        }
+
+        .planning_content {
+            background-color: #FFE3AD;
+            height: 88%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .card {
+                width: 28.4rem;
+                height: 37.8rem;
+                background-color: #FFFFFF;
+                
+                &:nth-child(1) {
+                    margin-right: 6rem;
+                }
+                
+                .description {
+                    margin: 2.4rem 2.2rem 3.2rem 2.2rem;
+
+                    .name {
+                        font-size: 18px;
+                        line-height: 100%;
+                        margin-bottom: 0.8rem;
+                    }
+
+                    .icon_content {
+                        display: flex;
+                        margin-bottom: 2.6rem;
+
+                        .gram {
+                            color: #6E798C;
+                            font-size: 16px;
+                            line-height: 100%;
+                        }
+                        .barre {
+                            color: #6E798C;
+                            font-size: 16px;
+                            line-height: 100%;
+                            margin-left: 1rem;
+                            margin-right: 0.8rem;
+                        }
+                        
+                        .icons {
+
+                            :nth-child(1) {
+                                margin-right: 0.6rem;
+                            }
+                        }
+                    }
+
+                    .attribute {
+                        display: flex;
+                        align-items: center;
+                        font-weight: 300;
+                        font-size: 16px;
+                        line-height: 100%;
+                        
+                        :nth-child(1) {
+                            width: 17px;
+                            height: 17px;
+                            margin-right: 0.82rem;
+                        }
+                    }
+
+                }
+                button {
+                    margin-right: auto;
+                    margin-left: auto;
+                    display: flex;
+                    padding: 1.2rem 2.6rem;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 100%;
+                    background-color: #151515;
+                    color: #ffffff;
+                    border: none;
+                    border-radius: 0.2rem;
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }

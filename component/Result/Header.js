@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Header() {
+function Header({ count }) {
     return (
         <header>
             <div className="header_result">
@@ -16,7 +16,7 @@ function Header() {
                     <a href="" className="link">Parainage</a>
                     <a href="" className="basket">
                         <p>Panier</p>
-                        <p>9</p>
+                        <p>{count}</p>
                     </a>
                     <button>Réserver mon chef</button>
                 </div>

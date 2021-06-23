@@ -13,6 +13,8 @@ h1 {
         .hero_content {
             height: 75%;
             background: url(/hero.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
             width: 100%;
 
             .hero_block {

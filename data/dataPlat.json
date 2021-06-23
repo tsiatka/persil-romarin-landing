@@ -1,0 +1,186 @@
+{
+    "dataPlat": [
+        {
+            "id": 1,
+            "day": "Lundi",
+            "choices": [
+                {
+                    "label": "Lundi midi",
+                    "name": "Salade de poulets et baies",
+                    "gram": 350,
+                    "bg_img": "/salade.svg",
+                    "attribute": "Favorise un meilleur sommeil",
+                    "attribute_img": "/lune.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                },
+                {
+                    "label": "Lundi soir",
+                    "name": "Pâtes bolognaise revisitées",
+                    "gram": 600,
+                    "bg_img": "/pates.svg",
+                    "attribute": "Favorise une meilleur energie",
+                    "attribute_img": "/shape.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "day": "Mardi",
+            "choices": [
+                {
+                    "label": "Mardi midi",
+                    "name": "3 salades, tomates et chèvres",
+                    "gram": 250,
+                    "bg_img": "/3salades.svg",
+                    "attribute": "Favorise un meilleur sommeil",
+                    "attribute_img": "/lune.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                },
+                {
+                    "label": "Mardi soir",
+                    "name": "Pâtes bolognaise revisitées",
+                    "gram": 250,
+                    "bg_img": "/veloute.svg",
+                    "attribute": "Favorise une meilleur energie",
+                    "attribute_img": "/shape.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "day": "Mercredi",
+            "choices": [
+                {
+                    "label": "Mercredi midi",
+                    "name": "Carottes cuites, poisson ..",
+                    "gram": 400,
+                    "bg_img": "/carottes.svg",
+                    "attribute": "Favorise un meilleur sommeil",
+                    "attribute_img": "/lune.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                },
+                {
+                    "label": "Mercredi soir",
+                    "name": "Tagliatelles parmesan, ..",
+                    "gram": 350,
+                    "bg_img": "/tagliatelles.svg",
+                    "attribute": "Favorise une meilleur energie",
+                    "attribute_img": "/shape.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "day": "Jeudi",
+            "choices": [
+                {
+                    "label": "Jeudi midi",
+                    "name": "Salade de légumes, oignons ..",
+                    "gram": 350,
+                    "bg_img": "/salade_legumes.svg",
+                    "attribute": "Favorise un meilleur sommeil",
+                    "attribute_img": "/lune.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                },
+                {
+                    "label": "Jeudi soir",
+                    "name": "Pâtes au saumon, crème ..",
+                    "gram": 450,
+                    "bg_img": "/pates_saumon.svg",
+                    "attribute": "Favorise une meilleur energie",
+                    "attribute_img": "/shape.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "day": "Vendredi",
+            "choices": [
+                {
+                    "label": "Vendredi midi",
+                    "name": "Pâtes sauce tomate, figues ..",
+                    "gram": 500,
+                    "bg_img": "/pates_tomate.svg",
+                    "attribute": "Favorise un meilleur sommeil",
+                    "attribute_img": "/lune.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                },
+                {
+                    "label": "Vendredi soir",
+                    "name": "Parpadelles aux oignons et ..",
+                    "gram": 500,
+                    "bg_img": "/parpadelles.svg",
+                    "attribute": "Favorise une meilleur energie",
+                    "attribute_img": "/shape.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "day": "Samedi",
+            "choices": [
+                {
+                    "label": "Samedi midi",
+                    "name": "Tagliatelles crevettes, tomates ..",
+                    "gram": 600,
+                    "bg_img": "/tagliatelles_crevettes.svg",
+                    "attribute": "Favorise un meilleur sommeil",
+                    "attribute_img": "/lune.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                },
+                {
+                    "label": "Samedi soir",
+                    "name": "Filets de colin, purée de ..",
+                    "gram": 300,
+                    "bg_img": "/filet.svg",
+                    "attribute": "Favorise une meilleur energie",
+                    "attribute_img": "/shape.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "day": "Dimanche",
+            "choices": [
+                {
+                    "label": "Dimanche midi",
+                    "name": "Gnocchis au parmigianno",
+                    "gram": 600,
+                    "bg_img": "/gnocchis.svg",
+                    "attribute": "Favorise un meilleur sommeil",
+                    "attribute_img": "/lune.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                },
+                {
+                    "label": "Dimanche soir",
+                    "name": "Poulet sésames sauce ca...",
+                    "gram": 600,
+                    "bg_img": "/poulet.svg",
+                    "attribute": "Favorise une meilleur energie",
+                    "attribute_img": "/shape.svg",
+                    "icon_lait": "/lait.svg",
+                    "icon_gluten": "/gluten.svg"
+                }
+            ]
+        }
+    ]
+}

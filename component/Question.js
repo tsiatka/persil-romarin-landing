@@ -1,5 +1,6 @@
 import react, { useState, useEffect } from 'react';
 import Axios from "axios";
+import { useRouter } from 'next/router';
 
 import _URL from "./url";
 
@@ -22,6 +23,7 @@ import Email from './Email';
 function Question(props) {
 
     const axios = require('axios');
+    const router = useRouter();
 
     const { data, dataChange, onAnswerUpdate, numberOfQuestions, activeQuestion, onSetActiveQuestion, onSetStep, datas } = props;
 
@@ -158,8 +160,15 @@ function Question(props) {
             },
             body: JSON.stringify(dataAPI),
         })
-            .then(() => console.log('logged'))
-            .catch((err) => console.log('error', err))
+            .then(res => {
+                if (res.status < 300) {
+                    dataRefresh();
+                }
+            })
+
+        function dataRefresh() {
+            router.reload(router.asPath);
+        }
 
         // let dataAPI = dataAnswers
 
@@ -302,6 +311,7 @@ function Question(props) {
                 nextClickHandler={nextClickHandler}
                 backClickHandler={backClickHandler}
                 postAPI={postAPI}
+                dataAnswers={dataAnswers}
             />}
         </section >
     )
