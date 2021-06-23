@@ -21,7 +21,7 @@ function SelectList(props) {
                         <p className="description">{data.description}</p>
                     }
                     <div className="select_bottom_container">
-                        <select id={data.dataName} onChange={getSelectedValue} value={selected}>
+                        <select id={data.dataName} onChange={getSelectedValue} className="select" value={selected}>
                             <option value=""></option>
                             <option value="Instagram">Instagram</option>
                             <option value="Pinterest">Pinterest</option>

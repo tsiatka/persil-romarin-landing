@@ -36,6 +36,8 @@
 
                 .input_2_bottom_container {
                     margin: 4rem 0 5.7rem 0;
+                    display: flex;
+                    justify-content: center;
 
                     :nth-child(1) {
                         margin-right: 3.2rem;

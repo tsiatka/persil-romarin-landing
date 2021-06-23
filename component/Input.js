@@ -17,7 +17,7 @@ function Input(props) {
                             <div className="input_bottom_container">
                                 <input type="text" id={data.dataName} placeholder={data.placeholders} onChange={changeHandler} />
                             </div>
-                            {error && <div className="error">{error}</div>}
+                            {error && <div className="error">{error} ALLO</div>}
                             {stepQuestion === numberOfQuestions ?
                                 <button onClick={nextClickHandler} className="input_next" href="">Finaliser</button>
                                 :

@@ -12,6 +12,25 @@
                     margin-bottom: 5.7rem;
 
                     select {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        -ms-appearance: none;
+                        appearance: none;
+                        outline: 0;
+                        box-shadow: none;
+                        border: 0 !important;
+                        background-image: none;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    select::-ms-expand {
+                        display: none;
+                    }
+                    .select {
+                        background: url('/polygon.svg') no-repeat scroll 32rem 2.5rem;
+                        background-color: #ffffff;
                         width: 35.6rem;
                         padding: 18px 24px 18px 24px;
                         border-radius: 2px;
@@ -21,10 +40,7 @@
                         font-size: 20px;
                         line-height: 100%;
                         color: #151515;
-
-                        &:focus {
-                            outline: none;
-                        }
+                        position: relative;
                     }
                 }
             }

@@ -111,7 +111,7 @@ function Question(props) {
                 setIsActive({})
                 setIsClicked(false)
 
-                if (datas.filter(item => item.id == data.choices[0].nextStep)[0].progress === true) {
+                if (datas.filter(item => item.ordre == data.choices[0].nextStep)[0].progress === true) {
                     setStepQuestion(stepQuestion + 1)
                     setProgress(((stepQuestion + 1) * 100) / numberOfQuestions)
                     setIsActive({})
@@ -124,7 +124,7 @@ function Question(props) {
                 setIsClicked(false)
                 setIsReplyKey(false)
 
-                if (datas.filter(item => item.id == data.choices[isReplyKey].nextStep)[0].progress === true) {
+                if (datas.filter(item => item.ordre == data.choices[isReplyKey].nextStep)[0].progress === true) {
                     setStepQuestion(stepQuestion + 1)
                     setProgress(((stepQuestion + 1) * 100) / numberOfQuestions)
                     setIsActive({})
@@ -139,7 +139,7 @@ function Question(props) {
         onSetActiveQuestion(prevStep);
         if (data.type === "input" || data.type === "text" || data.type === "input2" || data.type === "input1" || data.type === "select" || data.type === "date" || data.type === "block16" || data.type === "block6" || data.type === "email") {
 
-            if (datas.filter(item => item.id == prevStep)[0].progress === true) {
+            if (datas.filter(item => item.ordre == prevStep)[0].progress === true) {
                 setStepQuestion(stepQuestion - 1)
                 setProgress(((stepQuestion - 1) * 100) / numberOfQuestions)
             }
@@ -147,7 +147,7 @@ function Question(props) {
             // setPrevStep(activeQuestion)
             // onSetActiveQuestion(data.choices[isReplyKey].nextStep);
 
-            if (datas.filter(item => item.id == prevStep)[0].progress === true) {
+            if (datas.filter(item => item.ordre == prevStep)[0].progress === true) {
                 setStepQuestion(stepQuestion - 1)
                 setProgress(((stepQuestion - 1) * 100) / numberOfQuestions)
             }
