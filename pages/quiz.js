@@ -47,7 +47,7 @@ export default function Quiz() {
             <div className="app">
                 {step === 2 && <Question
                     // dataChange={changeHandler}
-                    data={quizData.data.filter(data => data.id === activeQuestion)[0]}
+                    data={quizData.data.filter(data => data.ordre === activeQuestion)[0]}
                     datas={quizData.data}
                     // dataAnswers={dataAnswers}
                     // onAnswerUpdate={setAnswers}

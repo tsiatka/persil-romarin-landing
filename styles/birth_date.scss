@@ -6,6 +6,12 @@
 
                 .input_bottom_container_date {
                     margin-top: 4rem;
+                    display: flex;
+                    justify-content: center;
+
+                    :nth-child(3){
+                        margin-right: 0;
+                    }
 
                     input {
                         width: 17.3rem;
