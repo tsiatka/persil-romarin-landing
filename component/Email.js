@@ -2,7 +2,7 @@ import React from 'react'
 
 function Email(props) {
 
-    const { data, stepQuestion, numberOfQuestions, changeHandler, error, nextClickHandler, backClickHandler } = props;
+    const { data, stepQuestion, numberOfQuestions, changeHandler, error, nextClickHandler, backClickHandler, postAPI } = props;
 
     return (
         <>
@@ -26,7 +26,7 @@ function Email(props) {
                     </div>
                     {error && <div className="error_email">{error}</div>}
                     {stepQuestion === numberOfQuestions ?
-                        <button onClick={nextClickHandler} className="input_next" href="">Finaliser</button>
+                        <button onClick={postAPI} className="input_next" href="">Finaliser</button>
                         :
                         <button onClick={nextClickHandler} value="Search" className="input_next">Suivant</button>
                     }

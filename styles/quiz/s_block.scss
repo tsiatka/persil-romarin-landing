@@ -104,7 +104,51 @@ html {
 
                     .block_card:last-child {
                         margin-right: 0;
-                    }                   
+                    }   
+                    
+                    .block_card_description {
+                        position: relative;
+                        width: 26.4rem;
+                        display: flex;
+                        flex-direction: column;
+                        margin-right: 4rem;
+                        padding-bottom: 5.5rem;
+                        background-color: #FFFFFF;
+                        box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
+                        border-radius: 0.2rem;
+                        cursor: pointer;
+
+                        * {
+                            pointer-events: none;
+                        }
+
+                        .check {
+                            position: absolute;
+                            top: 1.6rem;
+                            right: 2rem;
+                            pointer-events: none;
+                        }
+
+                        .block_card_img_description {
+                            margin-top: 5.5rem;
+                            height: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            pointer-events: none;
+                        }
+                        .block_label {
+                            padding-top: 1.95rem;
+                            pointer-events: none;
+                        }
+                        .block_description {
+                            color: #6E798C;
+                            margin: 1rem 1.9rem;
+                            line-height: 120%;
+                            pointer-events: none;
+                            font-size: 16px;
+                        }
+                    }
                 }
                 .block_bottom_container_annex {
                     display: flex;

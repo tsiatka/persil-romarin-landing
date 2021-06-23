@@ -1,18 +1,39 @@
-import react, { useState, useEffect } from 'react';
+import react, { useState } from 'react';
+import Head from 'next/head';
 
 import _URL from "../component/url";
 import Question from "../component/Question";
-import quizData from '../data/data.json';
-import Result from '../component/Result';
 import Layout from '../component/Layout';
 
 
-export default function Quiz() {
+export default function Quiz({ questions }) {
 
-    const [step, setStep] = useState(2);
-    const [question, setQuestion] = useState({});
     const [activeQuestion, setActiveQuestion] = useState(1);
 
+    return (
+        <>
+            <Head>
+                <link rel="shortcut icon" href="/favicon.png" />
+            </Head>
+            <Layout />
+            <>
+                <div className="app">
+                    <>
+                        <Question
+                            data={questions?.filter(item => item.ordre === activeQuestion)[0]}
+                            datas={questions}
+                            numberOfQuestions={questions.filter(data => data.progress === true).length}
+                            activeQuestion={activeQuestion}
+                            onSetActiveQuestion={setActiveQuestion}
+                        />
+                    </>
+                </div>
+            </>
+        </>
+    )
+}
+
+export const getServerSideProps = async () => {
 
     var headers = new Headers();
     headers.append("accept", "application/json");
@@ -21,60 +42,15 @@ export default function Quiz() {
         headers: headers,
     };
 
-    // useEffect(() => {
-    //     fetch(`${_URL}/questions`, myInit)
-    //         .then((res) => res.json())
-    //         .then((result) => {
-    //             setQuestion(result);
-    //             console.log(result)
-    //         });
-    // }, []);
+    const res = await fetch(`${_URL}/questions`, myInit)
+    const questions = await res.json();
 
-    const quizStartHandler = () => {
-        setStep(2);
+    return {
+        props: {
+            questions,
+        },
     }
-
-    const resetClickHandler = () => {
-        setActiveQuestion(0);
-        setAnswers([]);
-        setStep(2);
-        setDataAnswers("")
-    }
-
-    return (
-        <>
-            <Layout />
-            <div className="app">
-                {step === 2 && <Question
-                    // dataChange={changeHandler}
-                    data={quizData.data.filter(data => data.ordre === activeQuestion)[0]}
-                    datas={quizData.data}
-                    // dataAnswers={dataAnswers}
-                    // onAnswerUpdate={setAnswers}
-                    numberOfQuestions={quizData.data.filter(data => data.progress === true).length}
-                    activeQuestion={activeQuestion}
-                    onSetActiveQuestion={setActiveQuestion}
-                // onSetStep={setStep}
-                />}
-
-                {step === 3 && <QuestionCheckBox
-                    datas={quizData.data}
-                    data={quizData.data[activeQuestion]}
-                    dataChange={changeHandler}
-                    onAnswerUpdate={setAnswers}
-                    numberOfQuestions={quizData.data.length}
-                    activeQuestion={activeQuestion}
-                    onSetActiveQuestion={setActiveQuestion}
-                    onSetStep={setStep}
-                />}
-                {step === 18 && <Result
-                    onClose={() => setShowModal(false)}
-                    dataAnswers={dataAnswers}
-                    data={quizData.data}
-                    step={step}
-                    onReset={resetClickHandler}
-                />}
-            </div>
-        </>
-    )
 }
+
+
+

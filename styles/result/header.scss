@@ -1,41 +1,15 @@
-header {
-    height: 5.6rem;
-    font-family: 'Riposte', sans-serif!important;
-    position: fixed;
-    width: 100%;
 
-    .header_content {
-        height: 4.4rem;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        background-color: #151515;
-        color: #ffffff;
-        font-size: 13px;
-
-        :nth-child(1) {
-            margin-right: 0.5rem;
-        }
-        :nth-child(2) {
-            border-bottom: solid #ffffff 1px;
-            line-height: normal;
-            cursor: pointer;
-            text-decoration: none;
-            color: #ffffff;
-        }          
-    }
-
-    .header_bottom {
+    .header_result {
         display: flex;
         align-items: center;
         background-color: #ffffff;
-
+    
         .left,
         .right {
             flex: 1;
         }
         .right {
-
+    
             :nth-child(1) {
                 padding-left: 5rem;
                 text-decoration: none;
@@ -52,12 +26,12 @@ header {
         .center {
             padding: 1.3rem 0;
         }
-
+    
         .left {
             display: flex;
             justify-content: flex-end;
-
-            :nth-child(-n+2) {
+    
+            .link {
                 align-items: center;
                 display: flex;
                 text-decoration: none;
@@ -66,6 +40,32 @@ header {
                 margin-right: 3.2rem;
             }
 
+            .basket {
+                display: flex;
+                color: #151515;
+                font-size: 1.4rem;
+                margin-right: 3.2rem;
+                align-items: center;
+                text-decoration: none;
+
+                :nth-child(1) {
+                    margin-right: 1rem;
+                }
+                :nth-child(2) {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    text-align: center;
+                    background-color: #151515;
+                    border-radius: 50%;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    color: #ffffff;
+                    font-weight: 600;
+                    font-size: 1rem;
+                }
+            }
+    
             button {
                 border: none;
                 background-color: #151515;
@@ -78,4 +78,5 @@ header {
             }
         }
     }
-}
+
+

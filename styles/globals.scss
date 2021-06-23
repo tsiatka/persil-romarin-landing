@@ -17,23 +17,31 @@ html {
     font-display: swap;
   }
 
-//import fichier css
-@import 'header';
-@import 'footer';
-@import 'hero';
-@import 'reset';
-@import 'quiz';
-@import 'input';
-@import 's_block';
-@import 'm_block';
-@import 'm_input';
-@import 'l_block_16';
-@import 'email';
-@import 'text';
-@import 'm_block_6';
-@import 'select_list';
-@import 'birth_date';
+//import fichier css de la hero
+@import './hero/header';
+@import './hero/footer';
+@import './hero/hero';
 
-//import fichiers responsive
-@import 'responsive_quiz';
-@import 'responsive_s_block';
+
+//import fichier css du quiz
+@import './quiz/reset';
+@import './quiz/quiz';
+@import './quiz/input';
+@import './quiz/s_block';
+@import './quiz/m_block';
+@import './quiz/m_input';
+@import './quiz/l_block_16';
+@import './quiz/email';
+@import './quiz/text';
+@import './quiz/m_block_6';
+@import './quiz/select_list';
+@import './quiz/birth_date';
+
+//import fichier css du resultat
+@import './result/footer';
+@import './result/header';
+@import './result/result';
+
+//import fichiers responsive du quiz
+@import './responsive/responsive_quiz';
+@import './responsive/responsive_s_block';
