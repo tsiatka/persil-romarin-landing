@@ -146,9 +146,10 @@ function Question(props) {
         console.log(isAnnex)
     }
 
-    async function postAPI() {
 
-        let dataAPI = JSON.stringify(dataAnswers)
+    function postAPI() {
+        let dataAPI = dataAnswers
+
         console.log(dataAPI, "dataAPI")
 
         Axios.post(`${_URL}/clients`, {
