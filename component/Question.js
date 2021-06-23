@@ -1,5 +1,7 @@
 import react, { useState, useEffect } from 'react';
-import { useCountUp } from 'react-countup';
+import Axios from "axios";
+
+import _URL from "./url";
 
 import Header from './Header';
 import Input from './Input';
@@ -18,6 +20,8 @@ import BirthDate from './BirthDate';
 import Email from './Email';
 
 function Question(props) {
+
+    const axios = require('axios');
 
     const { data, dataChange, onAnswerUpdate, numberOfQuestions, activeQuestion, onSetActiveQuestion, onSetStep, datas } = props;
 
@@ -57,16 +61,6 @@ function Question(props) {
 
     const changeHandler = (e) => {
         const newData = { ...dataAnswers }
-        // if (data.type === "block16") {
-        //     // const activeClass = document.getElementsByClassName('inactiveactive')
-        //     // for (let i = 0; i < activeClass.length; i++) {
-        //     //     console.log(activeClass[i])
-        //     //     console.log(activeClass[i].getAttribute('value'))
-        //     //     newData[e.target.id] = activeClass[i].getAttribute('value')
-
-        //     // }
-        //     newData[e.target.id] = e.target.getAttribute('value')
-        // }
         if (data.type === "block4" || data.type === "block" || data.type === "block16" || data.type === "block6") {
 
             newData[e.target.id] = e.target.getAttribute('value')
@@ -89,27 +83,21 @@ function Question(props) {
         // setIsAnnexKey(i)
         setIsReplyKey(i)
         changeHandler(e)
-        // console.log(e.target.getAttribute('value'))
     }
+
+    console.log(numberOfQuestions, datas, data)
 
     const nextClickHandler = (e) => {
         if (data.requis === true && data.dataName in dataAnswers === false && data.type !== "input2" && data.type !== "date") {
             return setError('* Ce champ est obligatoire');
         }
-        // if (data.requis === true && data.type === "input2") {
-        //     data.placeholders.map((placeholder, i) => {
-        //         if ((data.dataName + '_' + placeholder) in dataAnswers === false) {
-        //             return setError('* Ces champ sont obligatoires');
-        //         }
-        //     });
-
-        // }
         if (stepQuestion < numberOfQuestions) {
+            setPrevStep(activeQuestion)
             if (data.type === "input" || data.type === "text" || data.type === "input2" || data.type === "input1" || data.type === "select" || data.type === "date" || data.type === "block16" || data.type === "block6") {
-                setPrevStep(activeQuestion)
                 onSetActiveQuestion(data.choices[0].nextStep);
                 setIsActive({})
                 setIsClicked(false)
+                console.log("object")
 
                 if (datas.filter(item => item.ordre == data.choices[0].nextStep)[0].progress === true) {
                     setStepQuestion(stepQuestion + 1)
@@ -118,7 +106,6 @@ function Question(props) {
                     setIsClicked(false)
                 }
             } else {
-                setPrevStep(activeQuestion)
                 onSetActiveQuestion(data.choices[isReplyKey].nextStep);
                 setIsActive({})
                 setIsClicked(false)
@@ -136,24 +123,16 @@ function Question(props) {
     }
 
     const backClickHandler = (e) => {
+        console.log(prevStep, "prevestep")
         onSetActiveQuestion(prevStep);
-        if (data.type === "input" || data.type === "text" || data.type === "input2" || data.type === "input1" || data.type === "select" || data.type === "date" || data.type === "block16" || data.type === "block6" || data.type === "email") {
 
-            if (datas.filter(item => item.ordre == prevStep)[0].progress === true) {
-                setStepQuestion(stepQuestion - 1)
-                setProgress(((stepQuestion - 1) * 100) / numberOfQuestions)
-            }
-        } else {
-            // setPrevStep(activeQuestion)
-            // onSetActiveQuestion(data.choices[isReplyKey].nextStep);
+        if (datas.filter(item => item.ordre == prevStep)[0].progress === true) {
+            setStepQuestion(stepQuestion - 1)
+            setProgress(((stepQuestion - 1) * 100) / numberOfQuestions)
 
-            if (datas.filter(item => item.ordre == prevStep)[0].progress === true) {
-                setStepQuestion(stepQuestion - 1)
-                setProgress(((stepQuestion - 1) * 100) / numberOfQuestions)
-            }
         }
+        setPrevStep(prevStep - 1)
     }
-
     const questionHandler = (e) => {
         if (isAnnexKey === 2) {
             setIsAnnex(true);
@@ -162,24 +141,23 @@ function Question(props) {
             nextClickHandler()
         }
     }
-
-    // const replyHandler = (e) => {
-    //     if (isReplyKey === 0 || 1) {
-    //         setInputAnswer(0)
-
-    //     }
-    //     if (isReplyKey === 2) {
-    //         onSetActiveQuestion(activeQuestion + 1);
-    //         setStepQuestion(stepQuestion + 1)
-    //         setInputAnswer(0);
-    //         setIsClicked(false)
-    //     }
-    // }
-
-
     const backReplyHandler = (e) => {
         setIsAnnex(false)
         console.log(isAnnex)
+    }
+
+    async function postAPI() {
+
+        let dataAPI = JSON.stringify(dataAnswers)
+        console.log(dataAPI, "dataAPI")
+
+        // Axios.post(`${_URL}/clients`, {
+        //     dataAPI
+        // })
+        let res = await axios.post(`${_URL}/clients`, dataAPI);
+        let test = res.test;
+        console.log(test);
+
     }
 
     return (
@@ -309,6 +287,7 @@ function Question(props) {
                 error={error}
                 nextClickHandler={nextClickHandler}
                 backClickHandler={backClickHandler}
+                postAPI={postAPI}
             />}
         </section >
     )

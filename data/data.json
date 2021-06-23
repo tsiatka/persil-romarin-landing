@@ -395,6 +395,51 @@
             "requis": false,
             "choices": [
                 {
+                    "label": "",
+                    "nextStep": 17
+                },
+                {
+                    "label": "Instagram",
+                    "nextStep": 17
+                },
+                {
+                    "label": "Pinterest",
+                    "nextStep": 17
+                },
+                {
+                    "label": "Facebook",
+                    "nextStep": 17
+                },
+                {
+                    "label": "Twitter",
+                    "nextStep": 17
+                },
+                {
+                    "label": "Article/Blog",
+                    "nextStep": 17
+                },
+                {
+                    "label": "Télévision",
+                    "nextStep": 17
+                },
+                {
+                    "label": "Radio",
+                    "nextStep": 17
+                },
+                {
+                    "label": "Bouche à oreille",
+                    "nextStep": 17
+                },
+                {
+                    "label": "Recherche sur internet",
+                    "nextStep": 17
+                },
+                {
+                    "label": "Panneaux publicitaires",
+                    "nextStep": 17
+                },
+                {
+                    "label": "Autre",
                     "nextStep": 17
                 }
             ]

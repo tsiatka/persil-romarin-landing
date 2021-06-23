@@ -22,18 +22,10 @@ function SelectList(props) {
                     }
                     <div className="select_bottom_container">
                         <select id={data.dataName} onChange={getSelectedValue} className="select" value={selected}>
-                            <option value=""></option>
-                            <option value="Instagram">Instagram</option>
-                            <option value="Pinterest">Pinterest</option>
-                            <option value="Facebook">Facebook</option>
-                            <option value="Twitter">Twitter</option>
-                            <option value="Article/Blog">Article/Blog</option>
-                            <option value="Télévision">Télévision</option>
-                            <option value="Radio">Radio</option>
-                            <option value="Bouche à oreille">Bouche à oreille</option>
-                            <option value="Recherche sur internet">Recherche sur internet</option>
-                            <option value="Panneaux publicitaires">Panneaux publicitaires</option>
-                            <option value="Autre">Autre</option>
+                            {data.choices.map((choice, i) => (
+                                <option value={choice.label}>{choice.label}</option>
+                            ))
+                            }
                         </select>
                     </div>
                     {error && <div className="error">{error}</div>}
