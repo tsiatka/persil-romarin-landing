@@ -21,7 +21,7 @@ h2 {
     .container {
         width: 40%;
 
-        :nth-child(1) {
+        .thanks {
             text-transform: uppercase;
             letter-spacing: 0.14em;
             font-weight: 500;
@@ -54,6 +54,8 @@ h2 {
                 color: #ffffff;
                 background-color: #151515;
                 border-radius: 0.2rem;
+                font-size: 18px;
+                line-height: 100%;
                 cursor: pointer;
             }
         }

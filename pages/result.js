@@ -77,7 +77,7 @@ export default function Result() {
             <Header count={count} />
             <section className="result_hero">
                 <div className="container">
-                    <p>Merci d'avoir fait le test !</p>
+                    <p className="thanks">Merci d'avoir fait le test !</p>
                     <h1>Le menu idéal de la semaine pour "Mathieu", comme au restaurant.</h1>
                     <p>Nos recommandations vous aideront à vous sentir plus énergique, ainsi qu’à soulager vos troubles du sommeil.</p>
                     <a>
