@@ -151,12 +151,12 @@ function Question(props) {
         let dataAPI = JSON.stringify(dataAnswers)
         console.log(dataAPI, "dataAPI")
 
-        // Axios.post(`${_URL}/clients`, {
-        //     dataAPI
-        // })
-        let res = await axios.post(`${_URL}/clients`, dataAPI);
-        let test = res.test;
-        console.log(test);
+        Axios.post(`${_URL}/clients`, {
+            dataAPI
+        })
+        // let res = await axios.post(`${_URL}/clients`, dataAPI);
+        // let test = res.test;
+        // console.log(test);
 
     }
 
