@@ -146,9 +146,9 @@ function Question(props) {
         console.log(isAnnex)
     }
 
+    let dataAPI = dataAnswers
 
     function postAPI() {
-        let dataAPI = dataAnswers
 
         fetch(`${_URL}/clients`, {
             method: 'POST',
@@ -160,6 +160,7 @@ function Question(props) {
         })
             .then(() => console.log('logged'))
             .catch((err) => console.log('error', err))
+
         // let dataAPI = dataAnswers
 
         // console.log(dataAPI, "dataAPI")
