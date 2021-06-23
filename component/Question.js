@@ -150,11 +150,23 @@ function Question(props) {
     function postAPI() {
         let dataAPI = dataAnswers
 
-        console.log(dataAPI, "dataAPI")
-
-        Axios.post(`${_URL}/clients`, {
-            dataAPI
+        fetch(`${_URL}/clients`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dataAPI),
         })
+            .then(() => console.log('logged'))
+            .catch((err) => console.log('error', err))
+        // let dataAPI = dataAnswers
+
+        // console.log(dataAPI, "dataAPI")
+
+        // Axios.post(`${_URL}/clients`, {
+        //     dataAPI
+        // })
         // let res = await axios.post(`${_URL}/clients`, dataAPI);
         // let test = res.test;
         // console.log(test);
