@@ -68,7 +68,7 @@ export default function Result(dataUser) {
             <section className="result_hero">
                 <div className="container">
                     <p className="thanks">Merci d'avoir fait le test !</p>
-                    <h1>Le menu idéal de la semaine pour {dataUser?.name}, comme au restaurant.</h1>
+                    <h1>Le menu idéal de la semaine pour {dataUser.dataUser.dataRaw?.prenom}, comme au restaurant.</h1>
                     <p>Nos recommandations vous aideront à vous sentir plus énergique, ainsi qu’à soulager vos troubles du sommeil.</p>
                     <a>
                         <button onClick={scrollDown}>Découvrir mon nouveau planning</button>

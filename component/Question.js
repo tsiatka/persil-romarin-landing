@@ -167,7 +167,7 @@ function Question(props) {
             })
 
         function dataRefresh() {
-            router.reload(router.asPath);
+            router.replace(`/result/${dataAnswers.email}`);
         }
 
         // let dataAPI = dataAnswers
