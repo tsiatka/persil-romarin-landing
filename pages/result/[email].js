@@ -14,9 +14,8 @@ import Card from '../../component/Result/Card';
 
 export default function Result(dataUser) {
 
+
     console.log(dataUser)
-
-
 
     const router = useRouter()
     const [routerId, setRouterId] = useState([]);
@@ -123,31 +122,11 @@ export default function Result(dataUser) {
     );
 }
 
-// export const getServerSideProps = async ({ routerId }) => {
-
-
-//     var headers = new Headers();
-//     headers.append("accept", "application/json");
-//     headers.get("accept");
-//     const myInit = {
-//         headers: headers,
-//     };
-
-//     const res = await fetch(`${_URL}/clients?email=${routerId}`, myInit)
-//     const data = await res.json();
-//     console.log(`${_URL}/clients?email=${routerId}`)
-//     console.log(routerId, "data")
-
-//     return {
-//         props: {
-//             data,
-//         },
-//     }
-// }
 export async function getStaticPaths() {
     // Call an external API endpoint to get posts
     const res = await fetch(`${_URL}/clients`)
     const clients = await res.json()
+
 
     // Get the paths we want to pre-render based on posts
     const paths = clients.map((client) => ({
@@ -165,7 +144,7 @@ export async function getStaticProps({ params }) {
     // If the route is like /posts/1, then params.id is 1
     const res = await fetch(`${_URL}/clients?email=${params.email}`)
     const dataClient = await res.json()
-    console.log(dataClient, "email")
+
     let dataUser = dataClient[0];
 
     // Pass post data to the page via props

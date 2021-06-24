@@ -4,6 +4,13 @@
             .input_content_date {
                 width: 60%;
 
+                .step {
+                    font-size: 13px;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    letter-spacing: 0.14em;
+                }
+
                 .input_bottom_container_date {
                     margin-top: 4rem;
                     display: flex;

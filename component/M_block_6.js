@@ -39,7 +39,7 @@ function M_block_6(props) {
                                             <img class="block_16_check" src="/check.svg" alt="" />
                                         }
                                         <div className="block_6_card_img">
-                                            <img src={choice.images} alt="" />
+                                            <img src={`http://persil-romarin-api.herokuapp.com/images/choices/${choice.images}`} alt="" />
                                         </div>
                                         <div className="block_16_label_container">
                                             <p className="block_16_label">{choice.label}</p>
