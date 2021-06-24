@@ -161,7 +161,7 @@ export async function getStaticProps({ params }) {
     const res = await fetch(`${_URL}/clients?email=${params.email}`)
     const dataClient = await res.json()
     console.log(dataClient, "email")
-    let dataUser = dataClient[dataClient.length - 1];
+    let dataUser = dataClient[0];
 
     // Pass post data to the page via props
     return { props: { dataUser } }
