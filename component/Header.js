@@ -21,7 +21,9 @@ const Header = (props) => {
                     <div className="progress" style={backgroundStyle}></div>
                 </div>
             </div>
-            <img src="/logo.svg" alt="" />
+            <a href="/">
+                <img src="/logo.svg" alt="" />
+            </a>
         </header>
     )
 }

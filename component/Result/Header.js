@@ -9,7 +9,7 @@ function Header({ count }) {
                     <a href="">Nos valeurs</a>
                 </div>
                 <div className="center">
-                    <a href="/hero">
+                    <a href="/">
                         <img src="/logo.svg" alt="" />
                     </a>
                 </div>
