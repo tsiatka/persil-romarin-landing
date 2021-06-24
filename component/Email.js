@@ -27,7 +27,7 @@ function Email(props) {
                     </div>
                     {error && <div className="error_email">{error}</div>}
                     {stepQuestion === numberOfQuestions ?
-                        <a>
+                        <a href="/result/mathieu@gmail.com">
                             <button onClick={postAPI} className="input_next">Finaliser</button>
                         </a>
                         :
