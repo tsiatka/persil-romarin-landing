@@ -46,6 +46,10 @@
                             margin-right: auto;
                             margin-left: auto;
                             display: flex;
+
+                            img {
+                                width: 4rem;
+                            }
                         }
                         .block_4_label_container {
                             min-width: 75%;
