@@ -160,18 +160,8 @@ function Question(props) {
             },
             body: JSON.stringify(dataAPI),
         })
-            .then(res => {
-                if (res.status < 300) {
-                    dataRefresh();
-                }
-                console.log(res, "res")
-            })
-
     }
 
-    function dataRefresh() {
-        router.replace(`/result/${dataAnswers.email}`);
-    }
 
     return (
         <section>
