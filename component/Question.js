@@ -160,6 +160,17 @@ function Question(props) {
             },
             body: JSON.stringify(dataAPI),
         })
+            .then(res => {
+                if (res.status < 300) {
+                    console.log("sa marche")
+                    dataRefresh()
+                }
+            })
+
+    }
+
+    function dataRefresh() {
+        router.replace(`/result/${dataAnswers.email}`)
     }
 
 
