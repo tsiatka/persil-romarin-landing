@@ -9,11 +9,13 @@ function Header({ count }) {
                     <a href="">Nos valeurs</a>
                 </div>
                 <div className="center">
-                    <img src="/logo.svg" alt="" />
+                    <a href="/hero">
+                        <img src="/logo.svg" alt="" />
+                    </a>
                 </div>
                 <div className="left">
                     <a href="" className="link">Carte cadeaux</a>
-                    <a href="" className="link">Parainage</a>
+                    <a href="" className="link">Parrainage</a>
                     <a href="" className="basket">
                         <p>Panier</p>
                         <p>{count}</p>

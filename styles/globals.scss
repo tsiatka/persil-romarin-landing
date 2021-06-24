@@ -2,6 +2,9 @@ html {
   font-size: calc(1em*.625); // 10px = 1rem
   line-height: 1.30;
 }
+button {
+  font-family: "Riposte", sans-serif;
+}
 @font-face {
     font-family: "Riposte";
     src: url("/font/Riposte-Light.otf");

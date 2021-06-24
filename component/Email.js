@@ -27,14 +27,9 @@ function Email(props) {
                     </div>
                     {error && <div className="error_email">{error}</div>}
                     {stepQuestion === numberOfQuestions ?
-                        <Link
-                            href={{
-                                pathname: '/result',
-                                query: { email: `${dataAnswers.email}` },
-                            }}
-                        >
+                        <a href={`/result/${dataAnswers.email}`}>
                             <button onClick={postAPI} className="input_next">Finaliser</button>
-                        </Link>
+                        </a>
                         :
                         <button onClick={nextClickHandler} value="Search" className="input_next">Suivant</button>
                     }

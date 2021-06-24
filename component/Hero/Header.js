@@ -14,11 +14,13 @@ function Header() {
                         <a href="">Nos valeurs</a>
                     </div>
                     <div className="center">
-                        <img src="/logo.svg" alt="" />
+                        <a href="/hero">
+                            <img src="/logo.svg" alt="" />
+                        </a>
                     </div>
                     <div className="left">
                         <a href="">Carte cadeaux</a>
-                        <a href="">Parainage</a>
+                        <a href="">Parrainage</a>
                         <button>Réserver mon chef</button>
                     </div>
                 </div>
