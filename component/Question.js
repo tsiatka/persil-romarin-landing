@@ -164,23 +164,13 @@ function Question(props) {
                 if (res.status < 300) {
                     dataRefresh();
                 }
+                console.log(res, "res")
             })
 
-        function dataRefresh() {
-            router.replace(`/result/${dataAnswers.email}`);
-        }
+    }
 
-        // let dataAPI = dataAnswers
-
-        // console.log(dataAPI, "dataAPI")
-
-        // Axios.post(`${_URL}/clients`, {
-        //     dataAPI
-        // })
-        // let res = await axios.post(`${_URL}/clients`, dataAPI);
-        // let test = res.test;
-        // console.log(test);
-
+    function dataRefresh() {
+        router.replace(`/result/${dataAnswers.email}`);
     }
 
     return (

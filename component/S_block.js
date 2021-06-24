@@ -60,7 +60,7 @@ function S_block(props) {
                                                     <img class="check" src="/check.svg" alt="" />
                                                 }
                                                 <div className="block_card_img">
-                                                    <img src={choice.images} alt="" />
+                                                    <img src={`http://persil-romarin-api.herokuapp.com/images/choices/${choice.images}`} alt="" />
                                                 </div>
                                                 <p className="block_label">{choice.label}</p>
                                             </div>

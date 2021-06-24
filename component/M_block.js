@@ -19,7 +19,7 @@ const M_block = (props) => {
                                             <img class="block_4_check" src="/check.svg" alt="" />
                                         }
                                         <div className="block_4_card_img">
-                                            <img src={choice.images} alt="" />
+                                            <img src={`http://persil-romarin-api.herokuapp.com/images/choices/${choice.images}`} alt="" />
                                         </div>
                                         <div className="block_4_label_container">
                                             <p className="block_4_label">{choice.label}</p>

@@ -82,6 +82,7 @@ html {
                             align-items: center;
                             justify-content: center;
                             pointer-events: none;
+                            padding-bottom: 1.9rem;
                         }
                         .block_label {
                             padding-top: 1.6rem;
@@ -152,59 +153,6 @@ html {
                             font-size: 16px;
                         }
                     }
-                }
-                .block_bottom_container_annex {
-                    display: flex;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                    margin-top: 4rem;
-
-                    .block_card {
-                        position: relative;
-                        width: 264px;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        margin-right: 4rem;
-                        padding-bottom: 4rem;
-                        background-color: #FFFFFF;
-                        box-shadow: 8px 8px 0px rgba(134, 23, 25, 0.1);
-                        border-radius: 0.2rem;
-                        cursor: pointer;
-
-                        .check {
-                            position: absolute;
-                            top: 1.6rem;
-                            right: 2rem;
-                        }
-
-                        .block_card_img {
-                            margin-top: 4rem;
-                            height: 20px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                        }
-                        .block_label {
-                            padding-top: 1.6rem;
-                        }
-                        .block_description {
-                            color: #6E798C;
-                            margin: 1rem 1.9rem;
-                            line-height: 120%;
-                        }
-                    }
-
-                    .inactive * {
-                        opacity: 0.6;
-                    }
-                    .inactive {
-                        box-shadow: none;
-                    }
-
-                    .block_card:last-child {
-                        margin-right: 0;
-                    } 
                 }
 
                 .next {
