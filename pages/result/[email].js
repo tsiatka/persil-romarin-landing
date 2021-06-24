@@ -94,10 +94,10 @@ export default function Result(dataUser) {
                         </div>
                         <div className="text_container">
                             <p>Vous êtes allergique</p>
-                            <p>à : {dataUser.dataUser.dataRaw?.allergies}</p>
+                            <p>au {dataUser.dataUser.dataRaw?.allergies}</p>
                         </div>
                         <div className="text_container">
-                            <p>Vous ne consommez pas de : </p>
+                            <p>Vous consommez des </p>
                             <p>{dataUser.dataUser.dataRaw?.pref}</p>
                         </div>
                     </div>
