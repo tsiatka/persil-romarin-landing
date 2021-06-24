@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 
 import _URL from '../../component/url';
 
+import Head from 'next/head';
+
 import Header from '../../component/Result/Header';
 import Footer from '../../component/Result/Footer';
 import Layout from '../../component/Layout';
@@ -63,6 +65,9 @@ export default function Result(dataUser) {
 
     return (
         <>
+            <Head>
+                <link rel="shortcut icon" href="/favicon.png" />
+            </Head>
             <Layout />
             <Header count={count} />
             <section className="result_hero">

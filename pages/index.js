@@ -4,9 +4,14 @@ import Header from '../component/Hero/Header'
 import Footer from '../component/Hero/Footer'
 import Layout from '../component/Layout';
 
+import Head from 'next/head';
+
 export default function Hero() {
   return (
     <>
+      <Head>
+        <link rel="shortcut icon" href="/favicon.png" />
+      </Head>
       <section className="hero">
         <Layout />
         <Header />
